@@ -579,6 +579,17 @@ Core.Basic.pageTransition();
 $(document).ready(function (){ 
     // Core Initialization  
     Core.init();
+    $('.nav-language li  a.active').removeClass('active');
+    
+    var clang;
+    console.log($.urlParam('clang'));
+    if($.urlParam('clang') === null) {
+        clang = "#lang-en"
+    } else {
+        clang = '#lang-'+ $.urlParam('clang');
+    }
+    $(clang).addClass('active');
+    
 });
 
 // Stick to Content
@@ -629,3 +640,21 @@ $(window).on('resize', function (){
         Waypoint.refreshAll()
     },600);
 });
+
+
+// $('.nav-language li').click(function(){
+//     console.log($this.urlParam('clang'));
+//     alert();
+//     return;
+// })
+
+
+$.urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results==null){
+       return null;
+    }
+    else{
+       return decodeURI(results[1]) || 0;
+    }
+}
