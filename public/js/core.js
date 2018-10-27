@@ -579,17 +579,17 @@ Core.Basic.pageTransition();
 $(document).ready(function (){ 
     // Core Initialization  
     Core.init();
-    $('.nav-language li  a.active').removeClass('active');
+    $('.lang').removeClass('active');
     
     var clang;
     console.log($.urlParam('clang'));
     if($.urlParam('clang') === null) {
-        clang = "#lang-en"
+        clang = ".lang-en"
     } else {
-        clang = '#lang-'+ $.urlParam('clang');
+        clang = '.lang-'+ $.urlParam('clang');
     }
     $(clang).addClass('active');
-    
+
 });
 
 // Stick to Content
