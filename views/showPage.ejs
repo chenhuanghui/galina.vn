@@ -136,7 +136,11 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
-                        <img class="rounded shadow" src="img/show/intro.jpg" alt="">
+                        <figure class="media-box">
+                            <div class="image"><img class="rounded shadow" src="img/show/intro.jpg" alt=""></div>
+                            <button class="btn-play animated visible" data-animation="fadeInUp" data-toggle="video-modal" data-target="#modalVideo" data-video="https://www.youtube.com/embed/hibhrK6p8zw"></button>
+                        </figure>
+                        
                     </div>
                     <div class="col-lg-4 col-md-6" data-local-scroll>
                         <p class="lead"><%= translation.show_intro_line1 %></p>
@@ -575,7 +579,7 @@
             </div>
   
         </section>
-        
+
         <!-- Section / Who we are? -->
         <section id="who-we-are" class="section">
   
@@ -730,6 +734,15 @@
         </div>
     </nav>
     
+    <!-- Video Modal / Demo -->
+  <div class="modal modal-video fade" id="modalVideo" role="dialog">
+    <button class="close dark" data-dismiss="modal"></button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <iframe height="500"></iframe>
+        </div>
+    </div>
+  </div>
      <!-- LOAD CORE SCRIPT THEME -->
   <script src="plugins/jquery/dist/jquery.min.js"></script>
   <script src="plugins/animsition/dist/js/animsition.min.js"></script>
