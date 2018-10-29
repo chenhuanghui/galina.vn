@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Meta -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Title -->
+    <title><%= title %></title>
+
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon_60x60.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon_76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon_120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon_152x152.png">
+
+    <!-- CSS Plugins -->
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css" />
+    <link rel="stylesheet" href="plugins/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="plugins/animsition/dist/css/animsition.min.css" />
+    <link rel="stylesheet" href="plugins/photoswipe/dist/photoswipe.css" />
+    <link rel="stylesheet" href="plugins/photoswipe/dist/default-skin/default-skin.css" />
+
+    <!-- CSS Icons -->
+    <link rel="stylesheet" href="css/themify-icons.css" />
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css" />
+
+    <!-- CSS Theme -->
+    <link id="theme" rel="stylesheet" href="css/themes/theme-blue.css" />
+  </head>
+
+  <body class="header-horizontal dark-overlay">
+    <div id="body-wrapper">      
+      <!-- Header -->
+      <header id="header" class="header-horizontal dark">
+        <!-- Module - Navigation -->
+        <nav id="navigation-main" class="module module-nav">
+            <ul class="nav nav-main-horizontal">
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
+                <li><a href="#features"><%= translation.Services %></a></li>
+                <li><a href="#gallery"><%= translation.Gallery %></a></li>
+                <li><a href="#promotion"><%= translation.Promotion %></a></li>
+                <li><a href="#who-we-are"><%= translation.Owner %></a></li>
+                <li><a href="#contact"><%= translation.Contact_us %></a></li>
+            </ul>
+            <div class="selector"></div>
+        </nav>
+        <!-- Module - Objects -->
+        <div class="module module-object" data-toggle="panel-objects">
+            <img class="object-image" src="img/photos/object_thumbnail.png" alt="" style="height: 36px">
+            <span class="object-name">Premium Hotel</span>
+            <span class="object-indicator"><i class="ti ti-menu"></i></span>
+        </div>
+        <!-- Module - Language -->
+        <nav class="module module-language mr-3">
+            <ul class="nav nav-main-horizontal nav-language">
+                <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
+                <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
+                <li><a id="lang-rus"class="lang lang-rus" href="/?clang=rus">RUS</a></li>
+                <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
+            </ul>
+        </nav>
+        <!-- Module - Navigation Toggle -->
+        <div class="module module-nav-toggle">
+            <a href="#" id="nav-toggle" class="nav-toggle"><span></span><span></span><span></span><span></span></a>
+        </div>
+      </header>
+      <!-- Header / End -->
+    
+      <!-- Content -->
+      <div id="content">
+  
+        <!-- Section / Home -->
+        <section id="home" class="section h-fullheight bg-dark cover dark">
+            
+            <!-- Slider Main -->
+            <div class="slider-main slider-kenburns inner-controls">
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="img/hotel/slider01.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                        <!-- <h1>Toàn cảnh khách sạn</h1> -->
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="img/hotel/slider02.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                        <!-- <h1>Spa Galina</h1> -->
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="img/hotel/slider03.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                        <!-- <h1>Wedding</h1> -->
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="img/hotel/slider04.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                        <!-- <h1>Convention</h1> -->
+                    </div>
+                </div>
+                <!-- Slide -->
+                <div class="slide">
+                    <div class="slide-bg bg-image-holder bg-image-fixed">
+                        <img src="img/hotel/slider05.jpg" alt="">
+                    </div>
+                    <div class="slide-content container text-center">
+                        <!-- <h1>Feel the nature</h1> -->
+                    </div>
+                </div>
+            </div>
+  
+            <!-- Slider Navigation -->
+            <div class="slider-main-nav">
+                <div class="slide"><img src="img/hotel/slider01_thumbnail.jpg" alt=""></div>
+                <div class="slide"><img src="img/hotel/slider02_thumbnail.jpg" alt=""></div>
+                <div class="slide"><img src="img/hotel/slider03_thumbnail.jpg" alt=""></div>
+                <div class="slide"><img src="img/hotel/slider04_thumbnail.jpg" alt=""></div>
+                <div class="slide"><img src="img/hotel/slider05_thumbnail.jpg" alt=""></div>
+            </div>
+  
+            <!-- Gallery Toggle -->
+            <a href="#" class="fullscreen-toggle" data-items="gallerySliderItems" data-toggle="gallery">
+                <span class="arrow-tl"></span>
+                <span class="arrow-tr"></span>
+                <span class="arrow-br"></span>
+                <span class="arrow-bl"></span>
+            </a>
+        </section>  
+  
+        <!-- Section / About -->
+        <section id="about" class="section">
+  
+            <div class="container">
+                <div class="row gutters-lg align-items-center">
+                    <div class="col-lg-4">
+                        <span class="badge badge-default mb-5"><i class="fa fa-check-circle text-success"></i><%= translation.intro_hotel4star %></span>
+                        <h1 class="mb-0">GALINA PREMIUM HOTEL</h1>
+                        <p class="lead text-muted mb-5"><%= translation.intro_st %></p>
+                        <!-- Feature #1 -->
+                        <div class="feature feature-1 mb-0">
+                            <i class="icon icon-primary ti ti-home animated" data-animation="fadeInDown"></i>
+                            <div class="feature-content">
+                                <h6 class="mb-0 text-muted"><%= translation.intro_NOR %></h6>
+                                <span class="h3">163</span>
+                            </div>
+                        </div>
+                        <hr class="hr-sm">
+                        <!-- Feature #1 -->
+                        <div class="feature feature-1">
+                            <i class="icon icon-primary ti ti-fullscreen animated" data-animation="fadeInDown" data-animation-delay="200"></i>
+                            <div class="feature-content">
+                                <h6 class="mb-0 text-muted"><%= translation.intro_square %></h6>
+                                <span class="h3">960m<sup>2</sup></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-5 mb-md-0">
+                        <img class="rounded shadow" src="img/hotel/galina-hotel.jpg" alt="">
+                    </div>
+                    <div class="col-lg-4 col-md-6" data-local-scroll>
+                        <p class="lead"><%= translation.intro_line1 %></p>
+                        <p><%= translation.intro_line2 %></p>
+                        <a href="#rooms" class="btn btn-primary animated" data-animation="fadeIn">Check rooms list</a>
+                    </div>
+                </div>
+            </div>
+  
+        </section>
+  
+        <!-- Section / rooms -->
+        <section id="rooms" class="section bg-light pt-0 pb-5">
+  
+            <!-- Objects - Search -->
+            <div class="objects-search bg-dark dark">
+                <div class="bg-image-holder bg-image-fixed zooming"><img src="img/photos/search-bg.jpg" alt=""></div>
+                <div class="container">
+                    <h1 class="mb-1"> <%= translation.accom_welcome1 %> </h1>
+                    <p class="lead text-muted"> <%= translation.accom_welcome2 %> </p>
+                    <hr>
+                    <form action="#">
+                        <div class="row align-items-end">
+                            <div class="col-lg-3 col-md-4 form-group">
+                                <h5 class="mb-3"><i class="fa fa-arrows-alt text-muted mr-2"></i> <%= translation.accom_in_out %> </h5>
+                                <!-- <div class="form-inline"> -->
+                                    <!-- <input type="text" class="form-control form-control-long" placeholder="Đến"> -->
+                                    <input type="text" class="form-control form-control-long" placeholder="Đến">
+                                    <label class="ml-2 mr-2"></label>
+                                    <input type="text" class="form-control form-control-long" placeholder="Đi">
+                                    <!-- <label class="ml-2">m<sup>2</sup></label> -->
+                                <!-- </div> -->
+                            </div>
+                            
+                            <div class="col-lg-3 col-md-4 form-group">
+                                <h5 class="mb-3"><i class="fa fa-bed text-muted mr-2"></i><%= translation.accom_adult_kid %></h5>
+                                <!-- <div class="form-inline"> -->
+                                    <input type="text" class="form-control form-control-long" placeholder="Nguời lớn">
+                                    <label class="ml-2 mr-2"></label>
+                                    <input type="text" class="form-control form-control-long" placeholder="Trẻ em">
+                                    <!-- <label class="ml-2">khách</label> -->
+                                <!-- </div> -->
+                            </div>
+  
+                            <div class="col-lg-3 col-md-4 form-group">
+                                <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i><%= translation.accom_booking_info %></h5>
+                                <!-- <div class="form-inline"> -->
+                                    <input type="text" class="form-control form-control-long" placeholder="Tên khách đại diện">
+                                    <label class="ml-2 mr-2"></label>
+                                    <input type="text" class="form-control form-control-long" placeholder="email / điện thoại">
+                                <!-- </div> -->
+                            </div>
+                            
+                            <div class="col-lg-3 form-group">
+                                <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i><%= translation.accom_room %></h5>
+                                <input type="text" class="form-control form-control-long" placeholder="Loại phòng">
+                                <label class="ml-2 mr-2"></label>
+                                <button class="btn btn-primary btn-block"><i class="fa fa-search mr-2"></i><%= translation.booking %></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+  
+            <div class="objects-container container">
+                <div class="text-right">
+                    <!-- Objects - Change Display -->
+                    <ul class="nav nav-view" role="tablist">
+                        <!-- <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#grid_view"><i class="fa fa-th"></i></a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#list_view"><i class="fa fa-th-list"></i></a></li> -->
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
+                        <!-- Objects - Grid-->
+                        <div class="objects-grid gutters-sm row">
+                            <div class="col-lg-3 col-6">
+                                <!-- Object - Vertical -->
+                                <div class="object object-vertical">
+                                    <div class="object-image">
+                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-superior.jpg" alt=""></a>
+                                    </div>
+                                    <div class="object-content">
+                                        <h5 class="object-title"><a class="link-inherit" href="object.html">Supperior</a></h5>
+                                        <ul class="object-details list-unstyled">
+                                            <li><span class="text-muted"><%= translation.square %>   </span> 32m<sup>2</sup></li>
+                                            <li><span class="text-muted"><%= translation.windows %>  </span> <%= translation.yes %></li>
+                                            <li><span class="text-muted"><%= translation.balcone %>  </span> <%= translation.no %></li>
+                                            <li><span class="text-muted"><%= translation.view %>     </span> <%= translation.city_view %></li>
+                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
+                                        </ul>
+                                        <span class="object-price">1.800.000 VND <sup><%= translation.night %></sup> </span>
+                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <!-- Object - Vertical -->
+                                <div class="object object-vertical">
+                                    <div class="object-image">
+                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-deluxe.jpg" alt=""></a>
+                                    </div>
+                                    <div class="object-content">
+                                        <h5 class="object-title">
+                                            <a class="link-inherit" href="object.html">Deluxe</a>
+                                            <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
+                                        </h5>
+                                        <ul class="object-details list-unstyled">
+                                            <li><span class="text-muted"><%= translation.square %>        </span> 37m<sup>2</sup></li>
+                                            <li><span class="text-muted"><%= translation.windows %>       </span> <%= translation.yes %></li>
+                                            <li><span class="text-muted"><%= translation.balcone %>       </span> <%= translation.yes %></li>
+                                            <li><span class="text-muted"><%= translation.view %>          </span> <%= translation.sea_view %></li>
+                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
+                                        </ul>
+                                        <span class="object-price">2.400.000 VND <sup><%= translation.night %></sup> </span>
+                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <!-- Object - Vertical -->
+                                <div class="object object-vertical">
+                                    <div class="object-image">
+                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-city.jpg" alt=""></a>
+                                    </div>
+                                    <div class="object-content">
+                                        <h5 class="object-title"><a class="link-inherit" href="object.html">Suite City View</a></h5>
+                                        <ul class="object-details list-unstyled">
+                                            <li><span class="text-muted"><%= translation.square %>          </span> 54m<sup>2</sup></li>
+                                            <li><span class="text-muted"><%= translation.windows %>         </span> <%= translation.yes %></li>
+                                            <li><span class="text-muted"><%= translation.balcone %>         </span> <%= translation.yes %></li>
+                                            <li><span class="text-muted"><%= translation.view %>            </span> <%= translation.city_view %></li>
+                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
+                                        </ul>
+                                        <span class="object-price">3.200.000 VND <sup><%= translation.night %></sup> </span>
+                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <!-- Object - Vertical -->
+                                <div class="object object-vertical">
+                                    <div class="object-image">
+                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-sea.jpg" alt=""></a>
+                                    </div>
+                                    <div class="object-content">
+                                        <h5 class="object-title">
+                                          <a class="link-inherit" href="object.html">Suite Sea View</a>
+                                          <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
+                                        </h5>
+                                        <ul class="object-details list-unstyled">
+                                            <li><span class="text-muted"><%= translation.square %>      </span> 56m<sup>2</sup></li>
+                                            <li><span class="text-muted"><%= translation.windows %>     </span> <%= translation.yes %></li>
+                                            <li><span class="text-muted"><%= translation.balcone %>     </span> <%= translation.yes %></li>
+                                            <li><span class="text-muted"><%= translation.view %>        </span> <%= translation.sea_view %></li>
+                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
+                                        </ul>
+                                        <span class="object-price">3.800.000 VND <sup><%= translation.night %></sup> </span>
+                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %> </a>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>  
+            </div>
+  
+        </section> 
+  
+        <!-- Section / Features -->
+        <section id="features" class="section">
+  
+            <div class="container">
+                <div class="row align-items-center" data-local-scroll>
+                    <div class="col-lg-4">
+                        <h1><%=  translation.utilities %></h1>
+                        <p class="lead mb-5"><%=  translation.utilities_intro %></p>
+                        <!-- Feature #1 -->
+                        <div class="feature feature-1">
+                            <i class="icon icon-primary ti ti-cup"></i>
+                            <div class="feature-content">
+                                <h5 class="mb-0"><%=  translation.utilities_room %></h5>
+                                <p class="text-muted"><%=  translation.utilities_room_detail %></p>
+                            </div>
+                        </div>
+                        <!-- Feature #1 -->
+                        <div class="feature feature-1">
+                            <i class="icon icon-primary ti ti-shine"></i>
+                            <div class="feature-content">
+                                <h5 class="mb-0"><%=  translation.utilities_room_other %></h5>
+                                <p class="text-muted"><%=  translation.utilities_room_other_detail %></p>
+                            </div>
+                        </div>
+                        <a href="#gallery" class="btn btn-secondary mb-4"><%=  translation.gallery %></a>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Card -->
+                        <div class="card">
+                            <img src="img/hotel/restaurant.jpg" alt="" class="card-image">
+                            <div class="card-block">
+                                <h5 class="mb-0"><%=  translation.utilities_buffet %></h5>
+                                <p class="text-muted mb-0"><%=  translation.utilities_buffet_intro %></p>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="card">
+                            <img src="img/hotel/gym.jpg" alt="" class="card-image">
+                            <div class="card-block">
+                                <h5 class="mb-0"><%=  translation.utilities_gym %></h5>
+                                <p class="text-muted mb-0"><%=  translation.utilities_gym_detail %></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <!-- Card -->
+                        <div class="card">
+                            <img src="img/hotel/hoboi.jpg" alt="" class="card-image">
+                            <div class="card-block">
+                                <h5 class="mb-0"><%=  translation.utilities_pool %></h5>
+                                <p class="text-muted mb-0"><%=  translation.utilities_pool_detail %></p>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="card">
+                            <img src="img/hotel/spa.jpg" alt="" class="card-image">
+                            <div class="card-block">
+                                <h5 class="mb-0"><%=  translation.utilities_mudbath_spa %></h5>
+                                <p class="text-muted mb-0"><%=  translation.utilities_mudbath_spa_detail %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  
+        </section>
+  
+        <!-- Section / Gallery -->
+        <section id="gallery" class="section bg-black cover dark">
+  
+            <h2 class="sr-only"><%=  translation.gallery %></h2>
+  
+            <div class="carousel-gallery">
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="0"><img src="img/gallery/gallery01.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="1"><img src="img/gallery/gallery02.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="2"><img src="img/gallery/gallery03.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="3"><img src="img/gallery/gallery04.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="4"><img src="img/gallery/gallery05.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="5"><img src="img/gallery/gallery06.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="6"><img src="img/gallery/gallery07.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="7"><img src="img/gallery/gallery08.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="8"><img src="img/gallery/gallery09.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="9"><img src="img/gallery/gallery10.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="10"><img src="img/gallery/gallery11.jpg" alt=""></a>
+                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="11"><img src="img/gallery/gallery12.jpg" alt=""></a>
+            </div>
+  
+        </section>
+  
+          <!-- Section / Promotion -->
+      <section id="promotion" class="section bg-light pt-0 pb-5">
+  
+              <!-- Objects - Search -->
+              <div class="objects-search bg-dark dark">
+                  <div class="bg-image-holder bg-image-fixed zooming"><img src="img/photos/search-bg.jpg" alt=""></div>
+                  <div class="container">
+                      <h1 class="mb-1"> <%=  translation.promotion %> </h1>
+                      <p class="lead text-muted"><%=  translation.promotion_intro %></p>
+                      <hr>
+                  </div>
+              </div>
+      
+              <div class="objects-container container">
+                  <div class="text-right">
+                      <!-- Objects - Change Display -->
+                      <!-- <ul class="nav nav-view" role="tablist">
+                          <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#grid_view"><i class="fa fa-th"></i></a></li>
+                          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#list_view"><i class="fa fa-th-list"></i></a></li>
+                      </ul> -->
+                  </div>
+                  <div class="tab-content">
+                      <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
+                          <!-- Objects - Grid-->
+                          <div class="objects-grid gutters-sm row">
+                              <div class="col-lg-3 col-6">
+                                  <!-- Object - Vertical -->
+                                  <div class="object object-vertical">
+                                      <div class="object-image">
+                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-superior.jpg" alt=""></a>
+                                      </div>
+                                      <div class="object-content">
+                                          <h5 class="object-title"><a class="link-inherit" href="object.html">Honeymoon </a></h5>
+                                          <ul class="object-details list-unstyled">
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>        </span> <%= translation.no %></li>
+                                          </ul>
+                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 2.800.000 VND</span>
+                                          <span class="object-price">5.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                          <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span><%=  translation.detail %></a>
+                                      </div> 
+                                  </div>
+                              </div>
+                              <div class="col-lg-3 col-6">
+                                  <!-- Object - Vertical -->
+                                  <div class="object object-vertical">
+                                      <div class="object-image">
+                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-deluxe.jpg" alt=""></a>
+                                      </div>
+                                      <div class="object-content">
+                                          <h5 class="object-title">
+                                              <a class="link-inherit" href="object.html">Couple Young</a>
+                                              <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
+                                          </h5>
+                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%= translation.promotion_pack_airplan_included_tag  %></span>
+                                          <ul class="object-details list-unstyled">
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>                  </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>                      </span> Deluxe</li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_airticket %>              </span> <%=  translation.promotion_pack_airplan_included %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>                 </span> Tứ Hải, Vinpearl</li>
+                                          </ul>
+                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 3.800.000 VND</span>
+                                          <span class="object-price">5.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                          <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
+                                      </div> 
+                                  </div>
+                              </div>
+                              <div class="col-lg-3 col-6">
+                                  <!-- Object - Vertical -->
+                                  <div class="object object-vertical">
+                                      <div class="object-image">
+                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-city.jpg" alt=""></a>
+                                      </div>
+                                      <div class="object-content">
+                                          <h5 class="object-title"><a class="link-inherit" href="object.html">Love again</a></h5>
+                                          <ul class="object-details list-unstyled">
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>                 </span> Tứ Hải, Vinpearl</li>
+                                          </ul>
+                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 7.800.000 VND</span>
+                                          <span class="object-price">6.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                          <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
+                                      </div> 
+                                  </div>
+                              </div>
+                              <div class="col-lg-3 col-6">
+                                  <!-- Object - Vertical -->
+                                  <div class="object object-vertical">
+                                      <div class="object-image">
+                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-sea.jpg" alt=""></a>
+                                      </div>
+                                      <div class="object-content">
+                                          <h5 class="object-title">
+                                              <a class="link-inherit" href="object.html">Vitamin Sea</a>
+                                              <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
+                                          </h5>
+                                          <ul class="object-details list-unstyled">
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>        </span> <%= translation.no %></li>
+                                          </ul>
+                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 12.800.000 VND</span>
+                                          <span class="object-price">7.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                          <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
+                                      </div> 
+                                  </div>
+                              </div>
+                          </div>
+                          
+                      </div>
+                  </div>
+                      
+                      
+                  <!-- Pagination -->
+                  <!-- <nav class="mt-4">
+                      <ul class="pagination justify-content-end">
+                          <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Previous">
+                                  <i class="ti-angle-left"></i>
+                                  <span class="sr-only">Previous</span>
+                              </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">4</a></li>
+                          <li class="page-item"><a class="page-link" href="#">5</a></li>
+                          <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Next">
+                                  <i class="ti-angle-right"></i>
+                                  <span class="sr-only">Next</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </nav> -->
+              </div>
+      
+          </section>   
+  
+        <!-- Section / Who we are? -->
+        <section id="who-we-are" class="section">
+  
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <figure class="media-box">
+                            <div class="image"><img src="img/hotel/about-hdg.jpg" alt=""></div>
+                            <button class="btn-play animated visible" data-animation="fadeInUp" data-toggle="video-modal" data-target="#modalVideo" data-video="https://www.youtube.com/embed/AD-D6uSYkqs"></button>
+                        </figure>
+                    </div>
+                    
+                    <div class="col-lg-5 push-lg-1 col-md-6">
+                        <h1>HAI DANG GROUP</h1>
+                        <ul class="nav nav-icons" role="tablist">
+                            <li class="nav-item"><a href="#tab_about" data-toggle="tab" class="nav-link active"><i class="ti-comment"></i><%=  translation.introduce %></a></li>
+                            <li class="nav-item"><a href="#tab_history" data-toggle="tab" class="nav-link"><i class="ti-time"></i><%=  translation.brand %> </a></li>
+                        </ul>
+                        <div class="tab-content" data-local-scroll>
+                            <div id="tab_about" class="tab-pane fade show active" role="tabpanel">
+                                <p class="lead"><%=  translation.introduce_line1 %></p>
+                                <p class="mb-5"><%=  translation.introcuce_line2 %></p>
+                                <a href="#contact" class="btn btn-primary mb-4"><%=  translation.contact %></a>
+                            </div>
+                            <div id="tab_history" class="tab-pane" role="tabpanel">
+                                <p class="lead"><%=  translation.brand_line1 %></p>
+                                <p class="mb-5"><%=  translation.brand_line2 %></p>
+                                <a href="#contact" class="btn btn-primary mb-4"><%=  translation.contact %></a>
+                            </div>
+                        </div>
+                    </div>
+  
+                </div>
+            </div>
+  
+        </section>
+      
+        <!-- Section / Contact -->
+        <section id="contact" class="section section-double bg-light">
+  
+            <div class="row">
+                <div class="content col-xl-4 col-md-5">
+                    <h2 class="mb-0"> <%= translation.contact_head %> <br> <%= translation.with_us %></h2>
+                    <hr class="hr-primary">
+                    <address>
+                      <%= translation.street %><br>
+                      <%= translation.ward %><br>
+                      <%= translation.city %><br>
+                    </address>
+                    <p class="lead">
+                        E: <a class="link-inherit" href="#" style="font-size:1rem; font-weight: bold;">booking@haidanggroup.com</a><br>
+                        P: <span style="font-size:1rem; font-weight: bold;">+84 901 7000 89</span>
+                    </p>
+                    <a href="#" target="_blank" class="icon icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="#" class="icon icon-circle icon-sm icon-google"><i class="fa fa-google"></i></a>
+                    <a href="#" class="icon icon-circle icon-sm icon-twitter"><i class="fa fa-twitter"></i></a>
+                    <a href="#" class="icon icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
+                    <a href="#" class="icon icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
+                </div>
+                <div class="image col-xl-8 col-md-7">
+                    <!-- <div id="google-map" class="bg-map" data-latitude="12.255900" data-longitude="109.195280" data-style="wy"></div> -->
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="960" height="560" id="gmap_canvas" src="https://maps.google.com/maps?q=galina%20hotel%20nha%20trang%20viet%20nam&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{text-align:right;height:560px;width:960px;}.gmap_canvas {overflow:hidden;background:none!important;height:560px;width:960px;}</style></div>
+                </div>
+            </div>
+  
+        </section>
+  
+      
+      </div> <!-- END CONTENT -->
+  
+      <!-- Footer -->
+        <footer id="footer" class="footer-fixed bg-dark dark">
+  
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center text-md-left mb-5 mb-md-0">
+                        <a href="#"><img src="img/logo-light.svg" width="120" alt=""></a>
+                    </div>
+                    <div class="col-md-10 text-center text-md-right">
+                        <ul class="nav nav-footer mr-4">
+                            <li><a href="#" class="active">HOTEL</a></li>
+                            <li><a href="#">MUD BATH & SPA</a></li>
+                            <li><a href="#">WEDDING & CONVENTION</a></li>
+                            <li><a href="#">SHOW</a></li>
+                            <li><a href="#">LAKE VIEW</a></li>
+                        </ul>
+                        <ul class="nav nav-footer">
+                          <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
+                          <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
+                          <li><a id="lang-rus" class="lang lang-rus" href="/?clang=rus">RUS</a></li>
+                          <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+  
+        </footer>
+        <!-- Footer / End -->
+  
+        <!-- Body Overlay -->
+        <div id="body-overlay"></div>
+  
+    </div> <!-- END BODY WRAPPER -->
+  
+    <!-- Panel - Objects -->
+    <nav id="panel-objects">
+        <div class="panel-objects-container container dark">
+            <h3 class="text-center mb-5">Danh mục dịch vụ: </h3>
+            <div class="panel-objects-list row">
+                <div class="col-md-4 col-sm-6">
+                    <!-- Panel Objects Item -->
+                    <div class="panel-objects-item">
+                        <a href="/hotel" class="panel-objects-item-image"><img src="img/objects/panel-object01.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- Panel Objects Item -->
+                    <div class="panel-objects-item">
+                        <a href="/mudbathspa" class="panel-objects-item-image"><img src="img/objects/panel-object02.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- Panel Objects Item -->
+                    <div class="panel-objects-item">
+                        <a href="/weddingconvention" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <!-- Panel Objects Item -->
+                    <div class="panel-objects-item">
+                        <a href="/show" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                        <!-- Panel Objects Item -->
+                    <div class="panel-objects-item">
+                        <a href="/lakeview" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                        <!-- Panel Objects Item -->
+                    <div class="panel-objects-item">
+                        <a href="/water" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                    </div>
+                </div>
+                
+            </div>
+        
+            <!-- Close -->
+            <button class="panel-objects-close close" data-toggle="panel-objects"></button>
+            
+        </div>
+  
+    </nav>
+  
+  <!-- Video Modal / Demo -->
+  <div class="modal modal-video fade" id="modalVideo" role="dialog">
+    <button class="close dark" data-dismiss="modal"></button>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <iframe height="500"></iframe>
+        </div>
+    </div>
+  </div>
+  
+  
+  <!-- LOAD CORE SCRIPT THEME -->
+  <script src="plugins/jquery/dist/jquery.min.js"></script>
+  <script src="plugins/animsition/dist/js/animsition.min.js"></script>
+  <script src="plugins/tether/dist/js/tether.min.js"></script>
+  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+  <script src="plugins/jquery.appear/jquery.appear.js"></script>
+  <script src="plugins/jquery.scrollto/jquery.scrollTo.min.js"></script>
+  <script src="plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
+  <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="plugins/photoswipe/dist/photoswipe.min.js"></script>
+  <script src="plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+  <script src="plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
+  <!-- JS Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  
+  <!-- LOAD CORE SCRIPT THEME -->
+  <script src="plugins/jquery/dist/jquery.min.js"></script>
+  <script src="plugins/animsition/dist/js/animsition.min.js"></script>
+  <script src="plugins/tether/dist/js/tether.min.js"></script>
+  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+  <script src="plugins/jquery.appear/jquery.appear.js"></script>
+  <script src="plugins/jquery.scrollto/jquery.scrollTo.min.js"></script>
+  <script src="plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
+  <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="plugins/photoswipe/dist/photoswipe.min.js"></script>
+  <script src="plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+  <script src="plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  
+  <!-- JS Core -->
+  <script src="js/core.js"></script>
+  
+  <!-- JS Gallery -->
+  <script>
+      // var gallerySliderItems = [
+      //     {
+      //         src: 'img/hotel/slider01.jpg',
+      //         w: 1920,
+      //         h: 1080
+      //     },
+      //     {
+      //         src: 'img/hotel/slider02.jpg',
+      //         w: 1920,
+      //         h: 1080
+      //     },
+      //     {
+      //         src: 'img/hotel/slider03.jpg',
+      //         w: 1920,
+      //         h: 1080
+      //     },
+      //     {
+      //         src: 'img/hotel/slider04.jpg',
+      //         w: 1920,
+      //         h: 1080
+      //     },
+      //     {
+      //         src: 'img/hotel/slider05.jpg',
+      //         w: 1920,
+      //         h: 1080
+      //     }
+      // ];
+  
+      // var galleryCarouselItems = [
+      //     {
+      //         src: 'img/gallery/gallery01.jpg',
+      //         w: 1100,
+      //         h: 750
+      //     },
+      //     {
+      //         src: 'img/gallery/gallery02.jpg',
+      //         w: 1100,
+      //         h: 750
+      //     },
+      //     {
+      //         src: 'img/gallery/gallery03.jpg',
+      //         w: 1100,
+      //         h: 750
+      //     },
+      //     {
+      //         src: 'img/gallery/gallery04.jpg',
+      //         w: 1100,
+      //         h: 750
+      //     },
+      //     {
+      //         src: 'img/gallery/gallery05.jpg',
+      //         w: 1100,
+      //         h: 750
+      //     },
+      //     {
+      //         src: 'img/gallery/gallery06.jpg',
+      //         w: 1100,
+      //         h: 750
+      //     }
+      // ];
+  // Init carousel
+  
+  $('.carousel','#content').slick();
+  
+  $('.slider-main','#content').slick({
+      fade: true,
+      dots: false,
+      speed: 800,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 4500,
+      pauseOnHover: false,
+      initialSlide: 1,
+      asNavFor: '.slider-main-nav',
+  });
+  
+  $('.slider-main-nav','#content').slick({
+      arrows: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+      focusOnSelect: true, 
+      centerMode: true,
+      asNavFor: '.slider-main'
+  });
+  
+  $('.slider-main','#content').slick('slickGoTo',0,true);
+  
+  $('.carousel-gallery','#content').slick({
+      arrows: true,
+      infinite: true,
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 4000
+  }); 
+  // END -- Init carousel
+  
+  
+  // NAVIGATION
+  var $header = $('#header');
+  var headerHeight = $('#header').height();
+  var $mobileNav = $('#mobile-nav');
+  var $section = $('.section','#content');
+  var $body = $('body');
+  var scrollOffset = 0;
+  if ($header.hasClass('header-horizontal')) scrollOffset = -headerHeight;
+  
+  var $scrollers = $('#header, #mobile-nav, [data-local-scroll]');
+  $scrollers.find('a').on('click', function(){
+      $(this).blur();
+  });
+  $scrollers.localScroll({
+      offset: scrollOffset,
+      duration: 700
+  });
+  
+  var $mainNavigation = $('#navigation-main'),
+      $menuItem = $('#navigation-main li > a'),
+      mainMenuOffset = null,
+      $selector = $mainNavigation.children('.selector');
+  
+  var setMenuSelector = function() {
+      var $activeItem = $mainNavigation.find('a.active');
+      if($activeItem.length != 0) {
+          mainMenuOffset = $mainNavigation.offset().left;
+          $selector.css({
+              'width': $activeItem.outerWidth(),
+              'left': $activeItem.offset().left - mainMenuOffset + 'px'
+          });
+      }
+  }
+  
+  var checkMenuItem = function(id) {
+      $menuItem.each(function(){
+          var link = $(this).attr('href');
+          if(id==link) {
+              $(this).addClass('active');
+              setMenuSelector();
+          }
+          else $(this).removeClass('active');
+      });
+      // Hide Mobile Nav
+      $mainNavigation.removeClass('show');
+      $header.removeClass('open');
+      $navToggle.removeClass('open');
+  }
+  
+  $section.waypoint({
+      handler: function(direction) {
+          if(direction=='up') {
+              var id = '#'+this.element.id;
+              checkMenuItem(id);
+          }
+      },
+      offset: function() {
+          if ($header.hasClass('header-horizontal')) return -this.element.clientHeight+headerHeight;
+          else return -this.element.clientHeight+2;
+      }
+  });
+  $section.waypoint({
+      handler: function(direction) {
+          if(direction=='down') {
+              var id = '#'+this.element.id;
+              checkMenuItem(id);
+          }
+      },
+      offset: function() {
+          if ($header.hasClass('header-horizontal')) return headerHeight+1;
+          else return 1;
+      }
+  });
+  
+  // Mobile Navigation
+  $navToggle.on('click', function(){
+      $(this).toggleClass('open');
+      if($header.hasClass('header-horizontal')) {
+          $mainNavigation.toggleClass('show');
+      } else {
+          $header.toggleClass('open');
+      }
+      return false;
+  });
+  
+  //END - NAVIGATION
+  
+  // GALARIES
+  var galleryContainer = '';
+      galleryContainer += '<!-- Root element of PhotoSwipe. Must have class pswp. -->';
+      galleryContainer += '<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">';
+      galleryContainer += '    <div class="pswp__bg"></div>';
+      galleryContainer += '    <div class="pswp__scroll-wrap">';
+      galleryContainer += '        <div class="pswp__container">';
+      galleryContainer += '            <div class="pswp__item"></div>';
+      galleryContainer += '            <div class="pswp__item"></div>';
+      galleryContainer += '            <div class="pswp__item"></div>';
+      galleryContainer += '        </div>';
+      galleryContainer += '        <div class="pswp__ui pswp__ui--hidden">';
+      galleryContainer += '            <div class="pswp__top-bar">';
+      galleryContainer += '                <div class="pswp__counter"></div>';
+      galleryContainer += '                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>';
+      galleryContainer += '                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>';
+      galleryContainer += '                <button class="pswp__button pswp__button--zoom" title="Zoom in\/out"></button>';
+      galleryContainer += '                <div class="pswp__preloader">';
+      galleryContainer += '                    <div class="pswp__preloader__icn">';
+      galleryContainer += '                      <div class="pswp__preloader__cut">';
+      galleryContainer += '                        <div class="pswp__preloader__donut"></div>';
+      galleryContainer += '                      </div>';
+      galleryContainer += '                    </div>';
+      galleryContainer += '                </div>';
+      galleryContainer += '            </div>';
+      galleryContainer += '            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">';
+      galleryContainer += '                <div class="pswp__share-tooltip"></div> ';
+      galleryContainer += '            </div>';
+      galleryContainer += '            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">';
+      galleryContainer += '            </button>';
+      galleryContainer += '            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">';
+      galleryContainer += '            </button>';
+      galleryContainer += '            <div class="pswp__caption">';
+      galleryContainer += '                <div class="pswp__caption__center"></div>';
+      galleryContainer += '            </div>';
+      galleryContainer += '        </div>';
+      galleryContainer += '    </div>';
+      galleryContainer += '</div>';
+  
+  $body.append(galleryContainer);
+  
+  // Photoswipe Gallery
+  var openPhotoSwipe = function(slide, galleryItems) {
+      var pswpElement = document.querySelectorAll('.pswp')[0];
+  
+      var options = {
+          index: slide // start at first slide
+      };
+  
+      // Initializes and opens PhotoSwipe
+      var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+      gallery.init();
+  }
+  
+  $('[data-toggle="gallery"]').on('click', function(){
+      var items = eval($(this).data('items'));
+      var slide = eval($(this).data('slide'));
+      openPhotoSwipe(slide,items);
+      return false;
+  });
+  
+  // END -- GALARIES
+  
+  
+  // MAP
+  var $googleMap = $('#google-map');
+  
+  if($googleMap.length) {
+  
+      var yourLatitude = 12.255900;   
+      var yourLongitude = 109.195280;    
+  
+      var pickedStyle = $googleMap.data('style');     
+      var wy = [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}];
+      var apple = [{"featureType":"landscape.man_made","elementType":"all","stylers":[{"color":"#faf5ed"},{"lightness":"0"},{"gamma":"1"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#bae5a6"}]},{"featureType":"road","elementType":"all","stylers":[{"weight":"1.00"},{"gamma":"1.8"},{"saturation":"0"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"hue":"#ffb200"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"lightness":"0"},{"gamma":"1"}]},{"featureType":"transit.station.airport","elementType":"all","stylers":[{"hue":"#b000ff"},{"saturation":"23"},{"lightness":"-4"},{"gamma":"0.80"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#a0daf2"}]}];
+      var dark = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
+  
+      var mapOptions = {
+          zoom: 15,
+          center: {lat: yourLatitude, lng: yourLongitude},
+          mapTypeControl: false,
+          panControl: false,
+          zoomControl: true,
+          scaleControl: false,
+          streetViewControl: false,
+          scrollwheel: false,
+          styles: eval(pickedStyle)
+      };
+  
+      var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+      var myLatLng = new google.maps.LatLng(yourLatitude,yourLongitude);
+      var image = {
+          url: 'img/location-pin.png',
+          anchor: new google.maps.Point(79, 115),
+      };
+      var myLocation = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          icon: image
+      });
+  }
+  // END -- MAP
+  
+  // Product Feature
+  $('.plan-container .plan-feature','#content').each(function(){
+      var x = $(this).data('x');
+      var y = $(this).data('y');
+      $(this).css({
+          'top': y,
+          'left': x
+      });
+  });
+  // END Product Feature
+  
+  
+  // MODAL
+  $('.modal[data-timeout]').each(function(){
+      var timeout = $(this).data('timeout'),
+          $this = $(this);
+      setTimeout(function() {
+          $this.modal('show');
+      }, timeout)
+  });
+  
+  $('[data-toggle="video-modal"]').on('click', function() {
+      var modal = $(this).data('target'),
+          video = $(this).data('video')
+  
+      $(modal + ' iframe').attr('src', video + '?autoplay=1');
+      $(modal).modal('show');
+  
+      $(modal).on('hidden.bs.modal', function () {
+          var $modalContent = $(modal + ' .modal-content')
+          $(modal + ' iframe').remove();
+          $modalContent.html('<iframe height="500"></iframe>');
+      })
+  
+      return false;
+  });
+  
+  // END MODAL
+  </script>
+  
+  <!-- END LOAD CORE SCRIPT THEME -->
+  </body>
+</html>
