@@ -31,6 +31,11 @@
 
     <!-- CSS Theme -->
     <link id="theme" rel="stylesheet" href="css/themes/theme-blue.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
   </head>
 
   <body class="header-horizontal dark-overlay">
@@ -201,8 +206,27 @@
                             <div class="col-lg-3 col-md-4 form-group">
                                 <h5 class="mb-3"><i class="fa fa-arrows-alt text-muted mr-2"></i> <%= translation.accom_in_out %> </h5>
                                 <!-- <div class="form-inline"> -->
-                                    <!-- <input type="text" class="form-control form-control-long" placeholder="Đến"> -->
                                     <input type="text" class="form-control form-control-long" placeholder="Đến">
+                                    
+                                    <!-- <div class="container">
+                                        <div class="row">
+                                            <div class='col-sm-6'>
+                                                <div class="form-group">
+                                                    <div class='input-group date' id='datetimepicker1'>
+                                                        <input type='text' class="form-control" />
+                                                        <span class="input-group-addon">
+                                                            <span class="glyphicon glyphicon-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <script type="text/javascript">
+                                                $(function () {
+                                                    $('#datetimepicker1').datetimepicker();
+                                                });
+                                            </script>
+                                        </div>
+                                    </div> -->
                                     <label class="ml-2 mr-2"></label>
                                     <input type="text" class="form-control form-control-long" placeholder="Đi">
                                     <!-- <label class="ml-2">m<sup>2</sup></label> -->
@@ -230,7 +254,19 @@
                             
                             <div class="col-lg-3 form-group">
                                 <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i><%= translation.accom_room %></h5>
-                                <input type="text" class="form-control form-control-long" placeholder="Loại phòng">
+                                <!-- <input type="text" class="form-control form-control-long" placeholder="Loại phòng"> -->
+                                
+                                <div class="dropdown accom">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%">
+                                        Superior
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                      <a class="dropdown-item" href="#">Superior</a>
+                                      <a class="dropdown-item" href="#">Deluxe</a>
+                                      <a class="dropdown-item" href="#">Suite City View</a>
+                                      <a class="dropdown-item" href="#">Suite Sea View</a>
+                                    </div>
+                                </div>
                                 <label class="ml-2 mr-2"></label>
                                 <button class="btn btn-primary btn-block"><i class="fa fa-search mr-2"></i><%= translation.booking %></button>
                             </div>
@@ -1124,6 +1160,13 @@
   });
   
   // END MODAL
+
+  $('.accom .dropdown-item').click(function(){
+      $('.dropdown.accom button').text($(this).text());
+      return false;
+  });
+  
+
   </script>
   
   <!-- END LOAD CORE SCRIPT THEME -->
