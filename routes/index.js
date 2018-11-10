@@ -30,7 +30,7 @@ router.get('/', function(req, res) {
       price: '1.800.000'
     },
     {
-      name:'Suite City',
+      name:'Suite City View',
       link: '#',
       imgRoom:'img/hotel/room-superior.jpg',
       square: '32',
@@ -41,7 +41,7 @@ router.get('/', function(req, res) {
       price: '1.800.000'
     },
     {
-      name:'Suite View',
+      name:'Suite Sea View',
       link: '#',
       imgRoom:'img/hotel/room-superior.jpg',
       square: '32',
