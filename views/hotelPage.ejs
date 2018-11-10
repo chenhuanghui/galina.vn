@@ -86,60 +86,23 @@
             
             <!-- Slider Main -->
             <div class="slider-main slider-kenburns inner-controls">
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="img/hotel/slider01.jpg" alt="">
+                <%  for (var i=0; i<sliders.length; i++) {%>
+                    <div class="slide">
+                        <div class="slide-bg bg-image-holder bg-image-fixed">
+                            <img src="<%= sliders[i] %>" alt="">
+                        </div>
+                        <div class="slide-content container text-center">
+                            <!-- <h1>Toàn cảnh khách sạn</h1> -->
+                        </div>
                     </div>
-                    <div class="slide-content container text-center">
-                        <!-- <h1>Toàn cảnh khách sạn</h1> -->
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="img/hotel/slider02.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                        <!-- <h1>Spa Galina</h1> -->
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="img/hotel/slider03.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                        <!-- <h1>Wedding</h1> -->
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="img/hotel/slider04.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                        <!-- <h1>Convention</h1> -->
-                    </div>
-                </div>
-                <!-- Slide -->
-                <div class="slide">
-                    <div class="slide-bg bg-image-holder bg-image-fixed">
-                        <img src="img/hotel/slider05.jpg" alt="">
-                    </div>
-                    <div class="slide-content container text-center">
-                        <!-- <h1>Feel the nature</h1> -->
-                    </div>
-                </div>
+                <% } %>
             </div>
-  
+            
             <!-- Slider Navigation -->
             <div class="slider-main-nav">
-                <div class="slide"><img src="img/hotel/slider01_thumbnail.jpg" alt=""></div>
-                <div class="slide"><img src="img/hotel/slider02_thumbnail.jpg" alt=""></div>
-                <div class="slide"><img src="img/hotel/slider03_thumbnail.jpg" alt=""></div>
-                <div class="slide"><img src="img/hotel/slider04_thumbnail.jpg" alt=""></div>
-                <div class="slide"><img src="img/hotel/slider05_thumbnail.jpg" alt=""></div>
+                <%  for (var i=0; i<sliders_thumb.length; i++) {%>
+                    <div class="slide"><img src="<%= sliders_thumb[i] %>" alt=""></div>    
+                <% } %>
             </div>
   
             <!-- Gallery Toggle -->
@@ -287,92 +250,31 @@
                     <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
                         <!-- Objects - Grid-->
                         <div class="objects-grid gutters-sm row">
+                            
+                            <% for (var i=0; i<roomlist.length; i++) { %>
+                            
                             <div class="col-lg-3 col-6">
                                 <!-- Object - Vertical -->
                                 <div class="object object-vertical">
                                     <div class="object-image">
-                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-superior.jpg" alt=""></a>
+                                        <a class="link-inherit" href="<%= roomlist[i].link %>"><img src= "<%= roomlist[i].imgRoom %>" alt=""></a>
                                     </div>
                                     <div class="object-content">
-                                        <h5 class="object-title"><a class="link-inherit" href="object.html">Supperior</a></h5>
+                                        <h5 class="object-title"><a class="link-inherit" href="<%= roomlist[i].link %>"> <%= roomlist[i].name %> </a></h5>
                                         <ul class="object-details list-unstyled">
-                                            <li><span class="text-muted"><%= translation.square %>   </span> 32m<sup>2</sup></li>
-                                            <li><span class="text-muted"><%= translation.windows %>  </span> <%= translation.yes %></li>
-                                            <li><span class="text-muted"><%= translation.balcone %>  </span> <%= translation.no %></li>
-                                            <li><span class="text-muted"><%= translation.view %>     </span> <%= translation.city_view %></li>
-                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
+                                            <li><span class="text-muted"><%= translation.square %>   </span> <%= roomlist[i].square %> m<sup>2</sup></li>
+                                            <li><span class="text-muted"><%= translation.windows %>  </span> <%= roomlist[i].windows %></li>
+                                            <li><span class="text-muted"><%= translation.balcone %>  </span> <%= roomlist[i].balcone %></li>
+                                            <li><span class="text-muted"><%= translation.view %>     </span> <%= roomlist[i].view %></li>
+                                            <li><span class="text-muted"><%= translation.capacity %> </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
                                         </ul>
-                                        <span class="object-price">1.800.000 VND <sup><%= translation.night %></sup> </span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                                        <span class="object-price"> <%= roomlist[i].price %> VND <sup><%= translation.night %></sup> </span>
+                                        <a href="<%= roomlist[i].link %>" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
                                     </div> 
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-6">
-                                <!-- Object - Vertical -->
-                                <div class="object object-vertical">
-                                    <div class="object-image">
-                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-deluxe.jpg" alt=""></a>
-                                    </div>
-                                    <div class="object-content">
-                                        <h5 class="object-title">
-                                            <a class="link-inherit" href="object.html">Deluxe</a>
-                                            <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
-                                        </h5>
-                                        <ul class="object-details list-unstyled">
-                                            <li><span class="text-muted"><%= translation.square %>        </span> 37m<sup>2</sup></li>
-                                            <li><span class="text-muted"><%= translation.windows %>       </span> <%= translation.yes %></li>
-                                            <li><span class="text-muted"><%= translation.balcone %>       </span> <%= translation.yes %></li>
-                                            <li><span class="text-muted"><%= translation.view %>          </span> <%= translation.sea_view %></li>
-                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
-                                        </ul>
-                                        <span class="object-price">2.400.000 VND <sup><%= translation.night %></sup> </span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
-                                    </div> 
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <!-- Object - Vertical -->
-                                <div class="object object-vertical">
-                                    <div class="object-image">
-                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-city.jpg" alt=""></a>
-                                    </div>
-                                    <div class="object-content">
-                                        <h5 class="object-title"><a class="link-inherit" href="object.html">Suite City View</a></h5>
-                                        <ul class="object-details list-unstyled">
-                                            <li><span class="text-muted"><%= translation.square %>          </span> 54m<sup>2</sup></li>
-                                            <li><span class="text-muted"><%= translation.windows %>         </span> <%= translation.yes %></li>
-                                            <li><span class="text-muted"><%= translation.balcone %>         </span> <%= translation.yes %></li>
-                                            <li><span class="text-muted"><%= translation.view %>            </span> <%= translation.city_view %></li>
-                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
-                                        </ul>
-                                        <span class="object-price">3.200.000 VND <sup><%= translation.night %></sup> </span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
-                                    </div> 
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-6">
-                                <!-- Object - Vertical -->
-                                <div class="object object-vertical">
-                                    <div class="object-image">
-                                        <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-sea.jpg" alt=""></a>
-                                    </div>
-                                    <div class="object-content">
-                                        <h5 class="object-title">
-                                          <a class="link-inherit" href="object.html">Suite Sea View</a>
-                                          <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
-                                        </h5>
-                                        <ul class="object-details list-unstyled">
-                                            <li><span class="text-muted"><%= translation.square %>      </span> 56m<sup>2</sup></li>
-                                            <li><span class="text-muted"><%= translation.windows %>     </span> <%= translation.yes %></li>
-                                            <li><span class="text-muted"><%= translation.balcone %>     </span> <%= translation.yes %></li>
-                                            <li><span class="text-muted"><%= translation.view %>        </span> <%= translation.sea_view %></li>
-                                            <li><span class="text-muted"><%= translation.capacity %>        </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
-                                        </ul>
-                                        <span class="object-price">3.800.000 VND <sup><%= translation.night %></sup> </span>
-                                        <a href="object.html" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %> </a>
-                                    </div> 
-                                </div>
-                            </div>
+                            
+                            <% } %>
                         </div>
                     </div>
                   </div>  
@@ -453,18 +355,9 @@
             <h2 class="sr-only"><%=  translation.gallery %></h2>
   
             <div class="carousel-gallery">
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="0"><img src="img/gallery/gallery01.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="1"><img src="img/gallery/gallery02.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="2"><img src="img/gallery/gallery03.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="3"><img src="img/gallery/gallery04.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="4"><img src="img/gallery/gallery05.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="5"><img src="img/gallery/gallery06.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="6"><img src="img/gallery/gallery07.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="7"><img src="img/gallery/gallery08.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="8"><img src="img/gallery/gallery09.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="9"><img src="img/gallery/gallery10.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="10"><img src="img/gallery/gallery11.jpg" alt=""></a>
-                <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="11"><img src="img/gallery/gallery12.jpg" alt=""></a>
+                <% for (var i=0; i<gallery.length; i++) {%>
+                    <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="0"><img src="<%= gallery[i] %>" alt=""></a>
+                <% } %>
             </div>
   
         </section>
@@ -551,7 +444,7 @@
                                   <!-- Object - Vertical -->
                                   <div class="object object-vertical">
                                       <div class="object-image">
-                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-city.jpg" alt=""></a>
+                                          <a class="link-inherit" href="#"><img src="img/hotel/room-suite-city.jpg" alt=""></a>
                                       </div>
                                       <div class="object-content">
                                           <h5 class="object-title"><a class="link-inherit" href="object.html">Love again</a></h5>
