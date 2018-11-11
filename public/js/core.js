@@ -579,6 +579,7 @@ Core.Basic.pageTransition();
 $(document).ready(function (){ 
     // Core Initialization  
     Core.init();
+
     $('.lang').removeClass('active');
     
     var clang;

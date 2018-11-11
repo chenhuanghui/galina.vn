@@ -19,11 +19,14 @@
 
     <!-- CSS Plugins -->
     <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="plugins/animate.css/animate.min.css" />
     <link rel="stylesheet" href="plugins/animsition/dist/css/animsition.min.css" />
     <link rel="stylesheet" href="plugins/photoswipe/dist/photoswipe.css" />
     <link rel="stylesheet" href="plugins/photoswipe/dist/default-skin/default-skin.css" />
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
 
     <!-- CSS Icons -->
     <link rel="stylesheet" href="css/themify-icons.css" />
@@ -31,11 +34,10 @@
 
     <!-- CSS Theme -->
     <link id="theme" rel="stylesheet" href="css/themes/theme-blue.css" />
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <style>
+        /* #datepicker{width:180px; margin: 0 20px 20px 20px;} */
+        /* #datepicker > span:hover{cursor: pointer;} */
+    </style>
   </head>
 
   <body class="header-horizontal dark-overlay">
@@ -169,29 +171,20 @@
                             <div class="col-lg-3 col-md-4 form-group">
                                 <h5 class="mb-3"><i class="fa fa-arrows-alt text-muted mr-2"></i> <%= translation.accom_in_out %> </h5>
                                 <!-- <div class="form-inline"> -->
-                                    <input type="text" class="form-control form-control-long" placeholder="Đến">
+                                    <!-- <input type="text" class="form-control form-control-long" placeholder="Đến"> -->
                                     
-                                    <!-- <div class="container">
-                                        <div class="row">
-                                            <div class='col-sm-6'>
-                                                <div class="form-group">
-                                                    <div class='input-group date' id='datetimepicker1'>
-                                                        <input type='text' class="form-control" />
-                                                        <span class="input-group-addon">
-                                                            <span class="glyphicon glyphicon-calendar"></span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <script type="text/javascript">
-                                                $(function () {
-                                                    $('#datetimepicker1').datetimepicker();
-                                                });
-                                            </script>
-                                        </div>
-                                    </div> -->
+                                    <div id="date-check-in" class="datepicker input-group date" data-date-format="dd-mm-yyyy">
+                                        <input class="form-control form-control-long" type="text" readonly />
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
+                                        
+                                    
                                     <label class="ml-2 mr-2"></label>
-                                    <input type="text" class="form-control form-control-long" placeholder="Đi">
+                                    <!-- <input type="text" class="form-control form-control-long" placeholder="Đi"> -->
+                                    <div id="date-check-out" class="datepicker input-group date" data-date-format="dd-mm-yyyy">
+                                        <input class="form-control form-control-long" type="text" readonly />
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                    </div>
                                     <!-- <label class="ml-2">m<sup>2</sup></label> -->
                                 <!-- </div> -->
                             </div>
@@ -249,10 +242,8 @@
                 <div class="tab-content">
                     <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
                         <!-- Objects - Grid-->
-                        <div class="objects-grid gutters-sm row">
-                            
+                        <div class="objects-grid gutters-sm row">                            
                             <% for (var i=0; i<roomlist.length; i++) { %>
-                            
                             <div class="col-lg-3 col-6">
                                 <!-- Object - Vertical -->
                                 <div class="object object-vertical">
@@ -273,7 +264,6 @@
                                     </div> 
                                 </div>
                             </div>
-                            
                             <% } %>
                         </div>
                     </div>
@@ -691,23 +681,8 @@
   
   <!-- LOAD CORE SCRIPT THEME -->
   <script src="plugins/jquery/dist/jquery.min.js"></script>
-  <script src="plugins/animsition/dist/js/animsition.min.js"></script>
-  <script src="plugins/tether/dist/js/tether.min.js"></script>
-  <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="plugins/jquery.appear/jquery.appear.js"></script>
-  <script src="plugins/jquery.scrollto/jquery.scrollTo.min.js"></script>
-  <script src="plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
-  <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-  <script src="plugins/photoswipe/dist/photoswipe.min.js"></script>
-  <script src="plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
-  <script src="plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
-  <!-- JS Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js"></script>
-  
-  <!-- LOAD CORE SCRIPT THEME -->
-  <script src="plugins/jquery/dist/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script src="js/moment.js"></script>
   <script src="plugins/animsition/dist/js/animsition.min.js"></script>
   <script src="plugins/tether/dist/js/tether.min.js"></script>
   <script src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -721,72 +696,15 @@
   <script src="plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
   <script src="plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+  <!-- JS Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
   
   <!-- JS Core -->
   <script src="js/core.js"></script>
   
   <!-- JS Gallery -->
   <script>
-      // var gallerySliderItems = [
-      //     {
-      //         src: 'img/hotel/slider01.jpg',
-      //         w: 1920,
-      //         h: 1080
-      //     },
-      //     {
-      //         src: 'img/hotel/slider02.jpg',
-      //         w: 1920,
-      //         h: 1080
-      //     },
-      //     {
-      //         src: 'img/hotel/slider03.jpg',
-      //         w: 1920,
-      //         h: 1080
-      //     },
-      //     {
-      //         src: 'img/hotel/slider04.jpg',
-      //         w: 1920,
-      //         h: 1080
-      //     },
-      //     {
-      //         src: 'img/hotel/slider05.jpg',
-      //         w: 1920,
-      //         h: 1080
-      //     }
-      // ];
-  
-      // var galleryCarouselItems = [
-      //     {
-      //         src: 'img/gallery/gallery01.jpg',
-      //         w: 1100,
-      //         h: 750
-      //     },
-      //     {
-      //         src: 'img/gallery/gallery02.jpg',
-      //         w: 1100,
-      //         h: 750
-      //     },
-      //     {
-      //         src: 'img/gallery/gallery03.jpg',
-      //         w: 1100,
-      //         h: 750
-      //     },
-      //     {
-      //         src: 'img/gallery/gallery04.jpg',
-      //         w: 1100,
-      //         h: 750
-      //     },
-      //     {
-      //         src: 'img/gallery/gallery05.jpg',
-      //         w: 1100,
-      //         h: 750
-      //     },
-      //     {
-      //         src: 'img/gallery/gallery06.jpg',
-      //         w: 1100,
-      //         h: 750
-      //     }
-      // ];
   // Init carousel
   
   $('.carousel','#content').slick();
@@ -1059,6 +977,26 @@
       return false;
   });
   
+  $(document).ready(function(){
+    var curDate = new Date();
+    var checkinDate = new Date();
+    var checkoutDate = new Date();
+    
+    checkinDate.setDate(curDate.getDate()+3);
+    checkoutDate.setDate(curDate.getDate()+10);
+    
+    $('.datepicker').datepicker();
+    $("#date-check-in").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+    }).datepicker('update', checkinDate);
+    
+    $("#date-check-out").datepicker({ 
+        autoclose: true, 
+        todayHighlight: true
+    }).datepicker('update', checkoutDate);
+    
+  })
 
   </script>
   
