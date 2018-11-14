@@ -88,6 +88,7 @@ router.get('/water', function (req, res) {
 })
 
 router.get('/sendmail', function(req,res){
+  
   var transporter =  nodemailer.createTransport({ // config mail server
     service: 'Gmail',
     auth: {
@@ -111,5 +112,7 @@ router.get('/sendmail', function(req,res){
           res.send('Message sent: ' +  info.response);
       }
   });
+
+  res.send('haah');
 })
 module.exports = router;
