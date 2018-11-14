@@ -19,7 +19,7 @@
 
     <!-- CSS Plugins -->
     <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css" />
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
     <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css" />
     <link rel="stylesheet" href="plugins/animate.css/animate.min.css" />
     <link rel="stylesheet" href="plugins/animsition/dist/css/animsition.min.css" />
@@ -173,7 +173,7 @@
                                 <!-- <div class="form-inline"> -->
                                     <!-- <input type="text" class="form-control form-control-long" placeholder="Đến"> -->
                                     
-                                    <div id="date-check-in" class="datepicker input-group date" data-date-format="dd-mm-yyyy">
+                                    <div id="date-check-in" class="datepicker input-group date " data-date-format="dd-mm-yyyy">
                                         <input class="form-control form-control-long" type="text" readonly />
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                     </div>
@@ -996,6 +996,19 @@
         todayHighlight: true
     }).datepicker('update', checkoutDate);
     
+
+//     var dateToday = new Date();
+//     var dates = $("#date-check-in, #date-check-out").datepicker({
+//     defaultDate: "+1w",
+//     minDate: curDate,
+//     onSelect: function(selectedDate) {
+//         var option = this.id == "from" ? "minDate" : "maxDate",
+//             instance = $(this).data("datepicker"),
+//             date = $.datepicker.parseDate(instance.settings.dateFormat || $.datepicker._defaults.dateFormat, selectedDate, instance.settings);
+//         dates.not(this).datepicker("option", option, date);
+//     }
+// });
+
   })
 
   </script>
