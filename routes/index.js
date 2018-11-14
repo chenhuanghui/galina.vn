@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var nodemailer =  require('nodemailer'); // khai báo sử dụng module nodemailer
 
+
+
 /* GET home page. */
 router.get('/', function(req, res) {
   let sliders = ['img/hotel/slider01.jpg','img/hotel/slider02.jpg','img/hotel/slider03.jpg','img/hotel/slider04.jpg','img/hotel/slider05.jpg'];
