@@ -91,6 +91,7 @@ router.get('/sendmail', function(req,res){
   // res.send(process.env);
   var transporter =  nodemailer.createTransport({ // config mail server
     service: 'Gmail',
+    port: 465,
     auth: {
         user: 'inbox.galina@gmail.com',
         pass: 'kh0ngb13t'
