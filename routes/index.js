@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var nodemailer =  require('nodemailer'); // khai báo sử dụng module nodemailer
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -85,4 +86,28 @@ router.get('/water', function (req, res) {
   res.render('waterPage', { title: 'GALINA LAKE VIEW' });
 })
 
+router.get('/sendmail', function(req,res){
+  var transporter =  nodemailer.createTransport({ // config mail server
+    service: 'Gmail',
+    auth: {
+        user: 'inbox.galina@gmail.com',
+        pass: 'kh0ngb13t'
+    }
+  });
+
+  var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
+    from: 'Thanh Batmon',
+    to: 'inbox.huytran@gmail.com',
+    subject: 'Test Nodemailer',
+    text: 'You recieved message from ',
+    html: 'test mail sender'
+  }
+  transporter.sendMail(mainOptions, function(err, info){
+      if (err) {
+          res.send(err);
+      } else {
+          res.send('Message sent: ' +  info.response);
+      }
+  });
+})
 module.exports = router;
