@@ -88,32 +88,32 @@ router.get('/water', function (req, res) {
 })
 
 router.get('/sendmail', function(req,res){
-  res.send(process.env);
-  // var transporter =  nodemailer.createTransport({ // config mail server
-  //   service: 'Gmail',
-  //   auth: {
-  //       user: 'inbox.galina@gmail.com',
-  //       pass: 'kh0ngb13t'
-  //   }
-  // });
+  // res.send(process.env);
+  var transporter =  nodemailer.createTransport({ // config mail server
+    service: 'Gmail',
+    auth: {
+        user: 'inbox.galina@gmail.com',
+        pass: 'kh0ngb13t'
+    }
+  });
 
-  // var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
-  //   from: 'Thanh Batmon',
-  //   to: 'inbox.huytran@gmail.com',
-  //   subject: 'Test Nodemailer',
-  //   text: 'You recieved message from ',
-  //   html: 'test mail sender'
+  var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
+    from: 'Thanh Batmon',
+    to: 'inbox.huytran@gmail.com',
+    subject: 'Test Nodemailer',
+    text: 'You recieved message from ',
+    html: 'test mail sender'
 
-  // }
-  // transporter.sendMail(mainOptions, function(err, info){
-  //     if (err) {
-  //       res.send('haah111');
-  //         // res.send(err);
-  //     } else {
-  //       res.send('haah222');
-  //         // res.send('Message sent: ' +  info.response);
-  //     }
-  // });
+  }
+  transporter.sendMail(mainOptions, function(err, info){
+      if (err) {
+        res.send('haah111');
+          // res.send(err);
+      } else {
+        res.send('haah222');
+          // res.send('Message sent: ' +  info.response);
+      }
+  });
 
 })
 module.exports = router;
