@@ -107,12 +107,14 @@ router.get('/sendmail', function(req,res){
   }
   transporter.sendMail(mainOptions, function(err, info){
       if (err) {
-          res.send(err);
+        res.send('haah111');
+          // res.send(err);
       } else {
-          res.send('Message sent: ' +  info.response);
+        res.send('haah222');
+          // res.send('Message sent: ' +  info.response);
       }
   });
 
-  res.send('haah');
+  
 })
 module.exports = router;
