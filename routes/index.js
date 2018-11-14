@@ -88,7 +88,7 @@ router.get('/water', function (req, res) {
 })
 
 router.get('/sendmail', function(req, res){
-  // res.send('haha');
+  res.send('haha');
   // sendmail({
   //   from: 'no-reply@galina.vn',
   //   to: 'inbox.huytran@gmail.com',
