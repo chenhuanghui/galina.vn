@@ -88,39 +88,28 @@ router.get('/water', function (req, res) {
 })
 
 router.get('/sendmail', function(req, res){
-  // res.send('haha');
-  // sendmail({
-  //   from: 'no-reply@galina.vn',
-  //   to: 'inbox.huytran@gmail.com',
-  //   replyTo: 'dosm.galina@haidanggroup.com',
-  //   subject: 'MailComposer sendmail',
-  //   html: 'Mail of test sendmail '
-  // }, function (err, reply) {
-  //   res.send(err && err.stack)
-  //   res.send(reply)
-  // })
-  var transporter =  nodemailer.createTransport({ // config mail server
-    service: 'Gmail',
+  var mailserverifo = nodemailer.createTransport({
+    service: 'gmail',
+    host : "smtp.gmail.com",
+    port : "465",
+    ssl : true,
     auth: {
-        user: 'inbox.galina@gmail.com',
-        pass: 'kh0ngb13t'
-    }
+    user: 'inbox.galina@gmail.com',
+    pass: 'kh0ngb13t'
+   }
   });
-  var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
-      from: 'Thanh Batmon',
-      to: 'inbox.huytran@gmail.com',
-      subject: 'Test Nodemailer',
-      text: 'You recieved message from ',
-      html: 'hello this test mail'
-  }
-  transporter.sendMail(mainOptions, function(err, info){
-      if (err) {
-          res.send(err);
-          // res.redirect('/');
-      } else {
-          res.send('Message sent: ' +  info.response);
-          // res.redirect('/');
-      }
+
+  var Mailinfo = {
+    from: 'no-ply@haidanggroup.com',
+    to: 'inbox.huytran@gmail.com',
+    subject: 'Testing email from node js server',
+    text: 'That was easy!'
+   };
+
+   mailserverifo.sendMail(Mailinfo, function(error, info){
+    if (error) { res.send(error); } 
+    else { res.send('Email Send Success: ' + info.response);}
   });
+
 })
 module.exports = router;
