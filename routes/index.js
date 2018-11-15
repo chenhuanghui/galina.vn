@@ -101,38 +101,12 @@ router.get('/water', function (req, res) {
 })
 
 
-router.get('/sendmail', function(req, res){
-  // var mailserverifo = nodemailer.createTransport({
-  //   service: 'gmail',
-  //   host : "smtp.gmail.com",
-  //   port : "465",
-  //   ssl : true,
-  //   auth: {
-  //   user: 'inbox.galina@gmail.com',
-  //   pass: 'kh0ngb13t'
-  //  }
-  // });
-
-  // var Mailinfo = {
-  //   from: 'no-ply@haidanggroup.com',
-  //   to: 'inbox.huytran@gmail.com',
-  //   subject: 'Testing email from node js server',
-  //   text: 'That was easy!'
-  //  };
-
-  //  mailserverifo.sendMail(Mailinfo, function(error, info){
-  //   if (error) { res.send(error); } 
-  //   else { res.send('Email Send Success: ' + info.response);}
-
-  // });
-
+router.post('/sendmail', function(req, res){
   sg.API(request, function (error, response) {
     if (error) {
-      res.send('Error response received');
+      return 0
     }
-    res.send(response.statusCode + ' - ' +response.body + ' - ' + response.headers);
-    // res.send(response.body);
-    // res.send(response.headers);
+    return 1;
   });
 })
 module.exports = router;
