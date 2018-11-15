@@ -87,33 +87,30 @@ router.get('/water', function (req, res) {
   res.render('waterPage', { title: 'GALINA LAKE VIEW' });
 })
 
-router.get('/sendmail', function(req,res){
-  // res.send(process.env);
-  var transporter =  nodemailer.createTransport({ // config mail server
-    service: 'Gmail',
-    port: 465,
+
+router.get('/sendmail', function(req, res){
+  var mailserverifo = nodemailer.createTransport({
+    service: 'gmail',
+    host : "smtp.gmail.com",
+    port : "465",
+    ssl : true,
     auth: {
-        user: 'inbox.galina@gmail.com',
-        pass: 'kh0ngb13t'
-    }
+    user: 'inbox.galina@gmail.com',
+    pass: 'kh0ngb13t'
+   }
   });
 
-  var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
-    from: 'Thanh Batmon',
+  var Mailinfo = {
+    from: 'no-ply@haidanggroup.com',
     to: 'inbox.huytran@gmail.com',
-    subject: 'Test Nodemailer',
-    text: 'You recieved message from ',
-    html: 'test mail sender'
+    subject: 'Testing email from node js server',
+    text: 'That was easy!'
+   };
 
-  }
-  transporter.sendMail(mainOptions, function(err, info){
-      if (err) {
-        res.send('haah111');
-          // res.send(err);
-      } else {
-        res.send('haah222');
-          // res.send('Message sent: ' +  info.response);
-      }
+   mailserverifo.sendMail(Mailinfo, function(error, info){
+    if (error) { res.send(error); } 
+    else { res.send('Email Send Success: ' + info.response);}
+
   });
 
 })
