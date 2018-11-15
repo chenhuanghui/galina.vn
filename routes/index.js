@@ -3,18 +3,7 @@ var router = express.Router();
 
 // var nodemailer =  require('nodemailer'); // khai báo sử dụng module nodemailer
 var helper = require('sendgrid').mail;
-var fromEmail = new helper.Email('noreply@haidanggroup.com');
-var toEmail = new helper.Email('dosm.galina@haidanggroup.com');
-var subject = 'Sending with SendGrid is Fun';
-var content = new helper.Content('text/plain', 'and easy to do anywhere, even with Node.js');
-var mail = new helper.Mail(fromEmail, subject, toEmail, content);
-var sg = require('sendgrid')('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');
 
-var request = sg.emptyRequest({
-  method: 'POST',
-  path: '/v3/mail/send',
-  body: mail.toJSON()
-});
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -101,12 +90,28 @@ router.get('/water', function (req, res) {
 })
 
 
-router.post('/sendmail', function(req, res){
+router.get('/sendmail', function(req, res){
+
+  var fromEmail = new helper.Email('no-reply@haidanggroup.com');
+  var toEmail = new helper.Email('dosm.galina@haidanggroup.com, inbox.huytran@gmail.com');
+  var subject = 'This is email confirmed booking';
+  var content = new helper.Content('text/plain', 'and easy to do anywhere, even with galinahotel');
+
+  var mail = new helper.Mail(fromEmail, subject, toEmail, content);
+  var sg = require('sendgrid')('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');
+  
+  var request = sg.emptyRequest({
+    method: 'POST',
+    path: '/v3/mail/send',
+    body: mail.toJSON()
+  });
+
+
   sg.API(request, function (error, response) {
     if (error) {
-      return 0
+      res.send(error)
     }
-    return 1;
+    res.send(response.statusCode + ',' + response.body);
   });
 })
 module.exports = router;
