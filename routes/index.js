@@ -100,7 +100,7 @@ router.post('/sendmail', function(req, res){
   
   var fromEmail = new helper.Email('no-reply@haidanggroup.com');
   var toEmail = new helper.Email(req.body.email);
-  var subject = 'This is email confirmed booking' + req.body.ci + '-' + req.body.co;
+  var subject = 'Booking Request ID #[ ' + req.body.ci + '-' + req.body.co + ' ]';
   var content = new helper.Content('text/plain', bodyEmail);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
   var sg = require('sendgrid')(process.env.SENDGRID_KEY);
