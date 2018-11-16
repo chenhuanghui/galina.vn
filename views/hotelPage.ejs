@@ -986,13 +986,13 @@
         }
         console.log(datareq);
 
-        // $.ajax({
-        //     type: 'POST',
-        //     url: url,
-        //     data: datareq   
-        // }).done(function(data) { console.log(data); })
-        //     .fail(function(error) { console.log(error); })
-        //     .always(function() { alert("complete"); });
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: datareq   
+        }).done(function(data) { console.log(data); })
+            .fail(function(error) { console.log(error); })
+            .always(function() { alert("complete"); });
     })
 
   </script>
