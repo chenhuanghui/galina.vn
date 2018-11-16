@@ -177,9 +177,9 @@
                             <div class="col-lg-3 col-md-4 form-group">
                                 <h5 class="mb-3"><i class="fa fa-bed text-muted mr-2"></i><%= translation.accom_adult_kid %></h5>
                                 <!-- <div class="form-inline"> -->
-                                    <input type="text" class="form-control form-control-long" placeholder="Nguời lớn">
+                                    <input type="text" id="adult" class="form-control form-control-long" placeholder="Nguời lớn">
                                     <label class="ml-2 mr-2"></label>
-                                    <input type="text" class="form-control form-control-long" placeholder="Trẻ em">
+                                    <input type="text" id="kid" class="form-control form-control-long" placeholder="Trẻ em">
                                     <!-- <label class="ml-2">khách</label> -->
                                 <!-- </div> -->
                             </div>
@@ -187,9 +187,9 @@
                             <div class="col-lg-3 col-md-4 form-group">
                                 <h5 class="mb-3"><i class="fa fa-random text-muted mr-2"></i><%= translation.accom_booking_info %></h5>
                                 <!-- <div class="form-inline"> -->
-                                    <input type="text" class="form-control form-control-long" placeholder="Tên khách đại diện">
+                                    <input type="text" id="guest-name" class="form-control form-control-long" placeholder="Tên khách đại diện">
                                     <label class="ml-2 mr-2"></label>
-                                    <input type="text" class="form-control form-control-long" placeholder="email / điện thoại">
+                                    <input type="text" id="guest-contact" class="form-control form-control-long" placeholder="email / điện thoại">
                                 <!-- </div> -->
                             </div>
                             
@@ -201,7 +201,7 @@
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:100%">
                                         Superior
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="room-type">
                                       <a class="dropdown-item" href="#">Superior</a>
                                       <a class="dropdown-item" href="#">Deluxe</a>
                                       <a class="dropdown-item" href="#">Suite City View</a>
@@ -664,7 +664,6 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/plugins/rangePlugin.js"></script>
   
-
   <!-- JS Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   
@@ -958,30 +957,42 @@
         mode: "range",
         "plugins": [new rangePlugin({ input: "#date-check-out"})]
     });
+
   })
+    $('#room-type a').on('click', function(){
+        $('#room-typa a.selected').removeClass('selected');
+        $(this).addClass('selected');
+    });
 
   $('.bookingbtn').click(function(event){
         event.preventDefault();
         var url = window.location.origin + '/sendmail';
-        console.log( url);
+        var ci = $('#date-check-in').val();
+        var co = $('#date-check-out').val();
+        var adult = $('#adult').val();
+        var kid = $('#kid').val();
+        var guestname = $('#guest-name').val();
+        var guestcontact = $('#guest-contact').val();
+        var roomtype = $('#room-type a.selected').text();
+        
         var datareq = {
-            'ci': '12/11/2018',
-            'co': '20/11/2018',
-            'adult': '2',
-            'kid': '2',
-            'room': 'supperior',
-            'email': 'inbox.huytran@gmail.com',
-            'tel': '0901621624',
-            'name': 'TRAN HOANG HUY'
+            'ci': ci,
+            'co': co,
+            'adult': adult,
+            'kid': kid,
+            'room': roomtype,
+            'email': guestcontact,
+            'name': guestname
         }
+        console.log(datareq);
 
-         $.ajax({
-            type: 'POST',
-            url: url,
-            data: datareq   
-        }).done(function(data) { console.log(data); })
-            .fail(function(error) { console.log(error); })
-            .always(function() { alert("complete"); });
+        // $.ajax({
+        //     type: 'POST',
+        //     url: url,
+        //     data: datareq   
+        // }).done(function(data) { console.log(data); })
+        //     .fail(function(error) { console.log(error); })
+        //     .always(function() { alert("complete"); });
     })
 
   </script>
