@@ -1,8 +1,6 @@
 require('dotenv').config()
 var express = require('express');
 var router = express.Router();
-
-// var nodemailer =  require('nodemailer'); // khai báo sử dụng module nodemailer
 var helper = require('sendgrid').mail;
 
 
@@ -99,27 +97,26 @@ router.post('/sendmail', function(req, res){
                   + '\n • Tel:' + req.body.tel 
                   + '\n • Name: ' + req.body.name 
                   + '\n • Room name: ' + req.body.room;
-
+  
   var fromEmail = new helper.Email('no-reply@haidanggroup.com');
-  var toEmail = new helper.Email(req.data.email);
-  var subject = 'This is email confirmed booking' + req.data.ci + '-' + req.data.co;
+  var toEmail = new helper.Email(req.body.email);
+  var subject = 'This is email confirmed booking' + req.body.ci + '-' + req.body.co;
   var content = new helper.Content('text/plain', bodyEmail);
-
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
   var sg = require('sendgrid')(process.env.SENDGRID_KEY);
-
+  
   var request = sg.emptyRequest({
     method: 'POST',
     path: '/v3/mail/send',
     body: mail.toJSON()
   });
 
-
   sg.API(request, function (error, response) {
     if (error) {
       res.send(0);
     }
-    res.send(statusCode);
+    res.send(response.statusCode);
   });
 })
+
 module.exports = router;
