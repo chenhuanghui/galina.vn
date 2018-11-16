@@ -6539,3 +6539,9 @@ a.text-dark:hover, a.text-dark:focus {
     opacity: 1;
   }
 }
+
+
+/***************************************/
+form .align-items-end input {
+  padding: 20px 10px !important;
+}
