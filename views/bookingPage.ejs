@@ -58,7 +58,7 @@
           <section class="container" style="padding-top: 50px;">
             <div class="objects-grid gutters-sm row">
               
-              <div class="col-lg-8">
+              <div class="col-lg-7">
                 <div class="booking-cta">
                   <h1>Make your reservation</h1>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi facere, soluta magnam consectetur molestias itaque
@@ -70,19 +70,20 @@
 
               <div class="col-lg-4 ">
                 <div class="booking-form">
-                  <form name='booking-form'>
+                  <span class="form-label fa fa-warning" id="warning-message" style="display: none; color: red; font-weight: normal"> Please input the requirement fill</span>
+                  <form name='booking-form' id="bookingform">
                     <div class="form-group">
                       <span class="form-label">Guest name booking </span>
                       <input class="form-control" id="guest-name" type="text" placeholder=" Please give us your name" required />
                     </div>
                     <div class="form-group">
-                        <span class="form-label">Email booking </span>
-                        <input class="form-control" id='guest-contact' type="text" placeholder=" Please give us your email" required />
-                      </div>
-                      <div class="form-group">
-                          <span class="form-label">Tel booking </span>
-                          <input class="form-control" id='guest-tel' type="text" placeholder=" Please give us your telephone number" required />
-                        </div>
+                      <span class="form-label">Email booking </span>
+                      <input class="form-control" id='guest-contact' type="text" placeholder=" Please give us your email" required />
+                    </div>
+                    <div class="form-group">
+                      <span class="form-label">Tel booking </span>
+                      <input class="form-control" id='guest-tel' type="text" placeholder=" Please give us your telephone number" required />
+                    </div>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
@@ -141,9 +142,19 @@
                         </div>
                       </div>
                     </div>
+                    
+                    <div class="form-group" style="margin-top: 20px; padding-left: 20px; padding-top: 10px; border-top: #e5e5e5 1px solid;">
+                          <input type="checkbox" class="form-check-input" id="checkbox-early-bird" style="margin-top: 10px">
+                          <label class="" style="font-size: 11px">
+                            <span style="display: inline-block"> Ealy bird service to get <span style="font-size: 15px; font-weight: bold">30%</span> discount </span>   
+                            <span style="font-weight: bold; display: inline-block"> GALINA MUDBATH & SPA | GALINA SHOW </span>  ticket 
+                          </label>
+                      
+                    </div>
+
                     <div class="form-btn">
                       <button class="submit-btn bookingbtn"> <span id="message">Check availability</span>  <i class="fa fa-spinner fa-spin" style="font-size:20px; display: none"></i></button>
-                      <p class="thankyou" style="display:none; padding-top: 10px">  We have send an email about your booking, please check your mail to get new information from us.</p>
+                      <p class="thankyou" style="display:none; padding-top: 10px; font-size: 11px">  We have send an email about your booking, please check your mail to get new information from us.</p>
                     </div>
                   </form>
                 </div>
@@ -272,8 +283,12 @@
     
     
     $('.bookingbtn').click(function(event){
+      if (!isValidForm()) {
+        $('#warning-message').addClass('d-block');
+        return false;
+      }
       event.preventDefault();
-      var url = window.location.origin + '/sendmail';
+      var url = window.location.origin + '/booking/sendmail';
       var ci = $('#date-check-in').val();
       var co = $('#date-check-out').val();
       var adult = $('#adult').val();
@@ -281,7 +296,8 @@
       var guestname = $('#guest-name').val();
       var guestcontact = $('#guest-contact').val();
       var roomtype = $('#room-no').val();
-      
+      var isPromotion = $('#checkbox-early-bird').val();
+
       var datareq = {
           'ci': ci,
           'co': co,
@@ -289,7 +305,8 @@
           'kid': kid,
           'room': roomtype,
           'email': guestcontact,
-          'name': guestname
+          'name': guestname,
+          'promotion': isPromotion
       }
       console.log(datareq);
 
@@ -304,12 +321,24 @@
         $('.fa-spinner.d-inline').removeClass('d-inline');
         $('#message').text('Thank you !!!');
         $('.thankyou').addClass('d-block');
+        $('#warning-message').removeClass('d-block');
+        $('.bookingbtn').removeClass('bookingbtn');
       })
       .fail(function(error) { 
         console.log(error); 
         $('.fa-spinner.d-inline').removeClass('d-inline');
       })
     })
+
+    function isValidForm() {
+      var form = document.getElementById('bookingform');
+      for(var i=0; i < form.elements.length; i++){
+        if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){ return false;}
+      }
+      return true
+    }
+
+
   </script>
 
 </body>
