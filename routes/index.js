@@ -97,9 +97,12 @@ router.post('/sendmail', function(req, res){
                   + '\n • Tel:' + req.body.tel 
                   + '\n • Name: ' + req.body.name 
                   + '\n • Room name: ' + req.body.room;
-  
-  var fromEmail = new helper.Email('no-reply@haidanggroup.com');
-  var toEmail = new helper.Email(req.body.email);
+
+  var mailTemp = req.body.email + ',booking@haidanggroup.com,reservation.galina@haidanggroup.com,gsales@haidanggroup.com';
+  // res.send(mailTemp);
+  var fromEmail = new helper.Email('inbox.galina@gmail.com');
+  var toEmail = new helper.Email()
+  var toEmail = new helper.Email(mailTemp);
   var subject = 'Booking Request ID #[ ' + req.body.ci + '-' + req.body.co + ' ]';
   var content = new helper.Content('text/plain', bodyEmail);
   var mail = new helper.Mail(fromEmail, subject, toEmail, content);
@@ -115,7 +118,7 @@ router.post('/sendmail', function(req, res){
     if (error) {
       res.send(0);
     }
-    res.send(response.statusCode);
+    res.send(response.statusCode + '- ' +response.body);
   });
 })
 
