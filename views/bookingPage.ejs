@@ -44,15 +44,7 @@
           <span class="object-name">Premium Hotel</span>
           <span class="object-indicator"><i class="ti ti-menu"></i></span>
       </div>
-      <!-- Module - Language -->
-      <nav class="module module-language mr-3">
-          <ul class="nav nav-main-horizontal nav-language">
-              <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
-              <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
-              <li><a id="lang-rus"class="lang lang-rus" href="/?clang=rus">RUS</a></li>
-              <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
-          </ul>
-      </nav>
+      
       <!-- Module - Navigation Toggle -->
       <div class="module module-nav-toggle">
           <a href="#" id="nav-toggle" class="nav-toggle"><span></span><span></span><span></span><span></span></a>
@@ -78,30 +70,30 @@
 
               <div class="col-lg-4 ">
                 <div class="booking-form">
-                  <form>
+                  <form name='booking-form'>
                     <div class="form-group">
                       <span class="form-label">Guest name booking </span>
-                      <input class="form-control" id="guest-name" type="text" placeholder=" Please give us your email">
+                      <input class="form-control" id="guest-name" type="text" placeholder=" Please give us your name" required />
                     </div>
                     <div class="form-group">
                         <span class="form-label">Email booking </span>
-                        <input class="form-control" id='guest-contact' type="text" placeholder=" Please give us your email">
+                        <input class="form-control" id='guest-contact' type="text" placeholder=" Please give us your email" required />
                       </div>
                       <div class="form-group">
                           <span class="form-label">Tel booking </span>
-                          <input class="form-control" id='guest-tel' type="text" placeholder=" Please give us your email">
+                          <input class="form-control" id='guest-tel' type="text" placeholder=" Please give us your telephone number" required />
                         </div>
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
                           <span class="form-label">Check In</span>
-                          <input class="form-control datepicker" id="date-check-in" required>
+                          <input class="form-control datepicker" id="date-check-in" required />
                         </div>
                       </div>
                       <div class="col-sm-6">
                         <div class="form-group">
                           <span class="form-label">Check out</span>
-                          <input class="form-control datepicker" id="date-check-out" required>
+                          <input class="form-control datepicker" id="date-check-out" required />
                         </div>
                       </div>
                     </div>
@@ -109,10 +101,13 @@
                       <div class="col-sm-4">
                         <div class="form-group">
                           <span class="form-label">Rooms</span>
-                          <select class="form-control" id="room-no">
+                          <select class="form-control" id="room-no" >
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
                           </select>
                           <span class="select-arrow"></span>
                         </div>
@@ -124,6 +119,9 @@
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
                           </select>
                           <span class="select-arrow"></span>
                         </div>
@@ -132,9 +130,12 @@
                         <div class="form-group">
                           <span class="form-label">Children</span>
                           <select class="form-control" id='kid'>
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
                           </select>
                           <span class="select-arrow"></span>
                         </div>
@@ -168,12 +169,6 @@
                       <li><a href="#">WEDDING & CONVENTION</a></li>
                       <li><a href="#">SHOW</a></li>
                       <li><a href="#">LAKE VIEW</a></li>
-                  </ul>
-                  <ul class="nav nav-footer">
-                    <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
-                    <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
-                    <li><a id="lang-rus" class="lang lang-rus" href="/?clang=rus">RUS</a></li>
-                    <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
                   </ul>
               </div>
           </div>
@@ -274,45 +269,46 @@
           "plugins": [new rangePlugin({ input: "#date-check-out"})]
       });
     })
-
+    
+    
     $('.bookingbtn').click(function(event){
-        event.preventDefault();
-        var url = window.location.origin + '/sendmail';
-        var ci = $('#date-check-in').val();
-        var co = $('#date-check-out').val();
-        var adult = $('#adult').val();
-        var kid = $('#kid').val();
-        var guestname = $('#guest-name').val();
-        var guestcontact = $('#guest-contact').val();
-        var roomtype = $('#room-no').val();
-        
-        var datareq = {
-            'ci': ci,
-            'co': co,
-            'adult': adult,
-            'kid': kid,
-            'room': roomtype,
-            'email': guestcontact,
-            'name': guestname
-        }
-        console.log(datareq);
+      event.preventDefault();
+      var url = window.location.origin + '/sendmail';
+      var ci = $('#date-check-in').val();
+      var co = $('#date-check-out').val();
+      var adult = $('#adult').val();
+      var kid = $('#kid').val();
+      var guestname = $('#guest-name').val();
+      var guestcontact = $('#guest-contact').val();
+      var roomtype = $('#room-no').val();
+      
+      var datareq = {
+          'ci': ci,
+          'co': co,
+          'adult': adult,
+          'kid': kid,
+          'room': roomtype,
+          'email': guestcontact,
+          'name': guestname
+      }
+      console.log(datareq);
 
-        $('.fa-spinner').addClass('d-inline')
-        $.ajax({
-            type: 'POST',
-            url: url,
-            data: datareq   
-        })
-        .done(function(data) { 
-          console.log(data); 
-          $('.fa-spinner.d-inline').removeClass('d-inline');
-          $('#message').text('Thank you !!!');
-          $('.thankyou').addClass('d-block');
-        })
-        .fail(function(error) { 
-          console.log(error); 
-          $('.fa-spinner.d-inline').removeClass('d-inline');
-        })
+      $('.fa-spinner').addClass('d-inline')
+      $.ajax({
+          type: 'POST',
+          url: url,
+          data: datareq   
+      })
+      .done(function(data) { 
+        console.log(data); 
+        $('.fa-spinner.d-inline').removeClass('d-inline');
+        $('#message').text('Thank you !!!');
+        $('.thankyou').addClass('d-block');
+      })
+      .fail(function(error) { 
+        console.log(error); 
+        $('.fa-spinner.d-inline').removeClass('d-inline');
+      })
     })
   </script>
 
