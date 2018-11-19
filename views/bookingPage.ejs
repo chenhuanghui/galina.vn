@@ -17,8 +17,11 @@
 
 	<!-- Custom stlylesheet -->
   <link rel="stylesheet" href="css/booking-style.css" />
-
   <link id="theme" rel="stylesheet" href="css/themes/theme-blue.css" />
+
+  <!-- CSS Icons -->
+  <link rel="stylesheet" href="css/themify-icons.css" />
+  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css" />
   
 </head>
 
@@ -27,20 +30,6 @@
     
     <!-- Header -->
     <header id="header" class="header-horizontal dark">
-      <!-- Module - Navigation -->
-      <nav id="navigation-main" class="module module-nav">
-          <ul class="nav nav-main-horizontal">
-              <li><a href="#home"><%= translation.Home %></a></li>
-              <li><a href="#about"><%= translation.Introduce %></a></li>
-              <li><a href="#rooms"><%= translation.Accomodation %></a></li>
-              <li><a href="#features"><%= translation.Services %></a></li>
-              <li><a href="#gallery"><%= translation.Gallery %></a></li>
-              <li><a href="#promotion"><%= translation.Promotion %></a></li>
-              <li><a href="#who-we-are"><%= translation.Owner %></a></li>
-              <li><a href="#contact"><%= translation.Contact_us %></a></li>
-          </ul>
-          <div class="selector"></div>
-      </nav>
       <!-- Module - Objects -->
       <div class="module module-object" data-toggle="panel-objects">
           <img class="object-image" src="img/photos/object_thumbnail.png" alt="" style="height: 36px">
@@ -184,11 +173,90 @@
 
   </footer>
   <!-- Footer / End -->
-    
 </div> <!-- end bodywrapper-->
 
+<!-- Panel - Objects -->
+<nav id="panel-objects">
+    <div class="panel-objects-container container dark">
+        <h3 class="text-center mb-5">Danh mục dịch vụ: </h3>
+        <div class="panel-objects-list row">
+            <div class="col-md-4 col-sm-6">
+                <!-- Panel Objects Item -->
+                <div class="panel-objects-item">
+                    <a href="/hotel" class="panel-objects-item-image"><img src="img/objects/panel-object01.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <!-- Panel Objects Item -->
+                <div class="panel-objects-item">
+                    <a href="/mudbathspa" class="panel-objects-item-image"><img src="img/objects/panel-object02.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <!-- Panel Objects Item -->
+                <div class="panel-objects-item">
+                    <a href="/weddingconvention" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <!-- Panel Objects Item -->
+                <div class="panel-objects-item">
+                    <a href="/show" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                    <!-- Panel Objects Item -->
+                <div class="panel-objects-item">
+                    <a href="/lakeview" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                    <!-- Panel Objects Item -->
+                <div class="panel-objects-item">
+                    <a href="/water" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
+                </div>
+            </div>
+            
+        </div>
+        <!-- Close -->
+        <button class="panel-objects-close close" data-toggle="panel-objects"></button>
+    </div>
+  </nav>
 
 
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="plugins/animsition/dist/js/animsition.min.js"></script>
+  <script src="plugins/tether/dist/js/tether.min.js"></script>
+  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
+  <script src="plugins/jquery.appear/jquery.appear.js"></script>
+  <script src="plugins/jquery.scrollto/jquery.scrollTo.min.js"></script>
+  <script src="plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
+  <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="plugins/photoswipe/dist/photoswipe.min.js"></script>
+  <script src="plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
+  <script src="plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/plugins/rangePlugin.js"></script>
+  <script src="js/core.js"></script>
+
+  <script>
+    // Mobile Navigation
+    $navToggle.on('click', function(){
+        $(this).toggleClass('open');
+        if($header.hasClass('header-horizontal')) {
+            $mainNavigation.toggleClass('show');
+        } else {
+            $header.toggleClass('open');
+        }
+        return false;
+    });
+  </script>
+
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
