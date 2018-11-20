@@ -646,16 +646,14 @@ $('.bookingbtn').click(function(event){
         data: datareq   
     })
     .done(function(data) { 
-      console.log(data); 
-      $('.fa-spinner.d-inline').removeClass('d-inline');
-      $('#message').text('Thank you !!!');
-      $('.thankyou').addClass('d-block');
-      $('#warning-message').removeClass('d-block');
-      $('.bookingbtn').removeClass('bookingbtn');
+        console.log(data); 
+        $('.fa-spinner.d-inline').removeClass('d-inline');
+        $('#message').text('Thank you !!!');
+        $('.thankyou').addClass('d-block');
     })
     .fail(function(error) { 
-      console.log(error); 
-      $('.fa-spinner.d-inline').removeClass('d-inline');
+        console.log(error); 
+        $('.fa-spinner.d-inline').removeClass('d-inline');
     })
 })
 
