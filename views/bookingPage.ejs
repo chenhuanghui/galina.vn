@@ -37,21 +37,8 @@
   <div id="body-wrapper">      
     
     <!-- Header -->
-    <header id="header" class="header-horizontal dark">
-      <!-- Module - Objects -->
-      <div class="module module-object" data-toggle="panel-objects">
-          <img class="object-image" src="img/photos/object_thumbnail.png" alt="" style="height: 36px">
-          <span class="object-name">Premium Hotel</span>
-          <span class="object-indicator"><i class="ti ti-menu"></i></span>
-      </div>
-      
-      <!-- Module - Navigation Toggle -->
-      <div class="module module-nav-toggle">
-          <a href="#" id="nav-toggle" class="nav-toggle"><span></span><span></span><span></span><span></span></a>
-      </div>
-    </header>
+    <%- include partials/navBar.ejs %>
     <!-- Header / End -->
-    <div class="clear"></div>    
 
     <div id="content">
       <div id="booking" class="hotel-booking">
@@ -189,7 +176,7 @@
   <!-- Footer / End -->
 </div> <!-- end bodywrapper-->
 
-  <%- include panelBar.ejs %>
+  <%- include partials/panelBar.ejs %>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -212,77 +199,6 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/plugins/rangePlugin.js"></script>
   <script src="js/core.js"></script>
-
-  <script>
-    $(document).ready(function(){
-      // $('.datepicker').datepicker();
-      $(".datepicker").flatpickr({
-          dateFormat: "d-m-Y",
-          minDate: 'today',
-          mode: "range",
-          "plugins": [new rangePlugin({ input: "#date-check-out"})]
-      });
-    })
-    
-    
-    $('.bookingbtn').click(function(event){
-      if (!isValidForm()) {
-        $('#warning-message').addClass('d-block');
-        return false;
-      }
-      event.preventDefault();
-      var url = window.location.origin + '/booking/sendmail';
-      var ci = $('#date-check-in').val();
-      var co = $('#date-check-out').val();
-      var adult = $('#adult').val();
-      var kid = $('#kid').val();
-      var guestname = $('#guest-name').val();
-      var guestcontact = $('#guest-contact').val();
-      var roomtype = $('#room-no').val();
-      var isPromotion = $('#checkbox-early-bird').val();
-
-      var datareq = {
-          'ci': ci,
-          'co': co,
-          'adult': adult,
-          'kid': kid,
-          'room': roomtype,
-          'email': guestcontact,
-          'name': guestname,
-          'promotion': isPromotion
-      }
-      console.log(datareq);
-
-      $('.fa-spinner').addClass('d-inline')
-      $.ajax({
-          type: 'POST',
-          url: url,
-          data: datareq   
-      })
-      .done(function(data) { 
-        console.log(data); 
-        $('.fa-spinner.d-inline').removeClass('d-inline');
-        $('#message').text('Thank you !!!');
-        $('.thankyou').addClass('d-block');
-        $('#warning-message').removeClass('d-block');
-        $('.bookingbtn').removeClass('bookingbtn');
-      })
-      .fail(function(error) { 
-        console.log(error); 
-        $('.fa-spinner.d-inline').removeClass('d-inline');
-      })
-    })
-
-    function isValidForm() {
-      var form = document.getElementById('bookingform');
-      for(var i=0; i < form.elements.length; i++){
-        if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){ return false;}
-      }
-      return true
-    }
-
-
-  </script>
 
 </body>
 </html>

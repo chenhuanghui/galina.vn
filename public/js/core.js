@@ -24,7 +24,28 @@ var Core = {
             this.backgrounds();
             this.footer();
             this.navigation();
+            this.datepicker();
             this.masonry();
+            this.language();
+        },
+        language: function(){
+            if ($.cookie('clang') === 'undefined') {
+                $.cookie('clang', 'lang-en');
+                $('.lang-en').addClass('active');
+            } else {
+                $('.lang').removeClass('active');
+                var clang = $.cookie('clang');
+                $(clang).addClass('active');
+            }
+        },
+        datepicker: function(){
+            // flatpickr
+            $(".datepicker").flatpickr({
+                dateFormat: "d-m-Y",
+                minDate: 'today',
+                mode: "range",
+                "plugins": [new rangePlugin({ input: "#date-check-out"})]
+            });
         },
         animations: function() {
             // Animation - appear 
@@ -541,23 +562,6 @@ var Core = {
 // Page Transition Initialization
 Core.Basic.pageTransition();
 
-$(document).ready(function (){ 
-    // Core Initialization  
-    Core.init();
-    
-    //update languagues actived
-    $('.lang').removeClass('active');
-    
-    var clang;
-    if($.urlParam('clang') === null) {
-        clang = ".lang-en"
-    } else {
-        clang = '.lang-'+ $.urlParam('clang');
-    }
-    $(clang).addClass('active');
-
-});
-
 // Stick to Content
 var $stickableNav = $('.stick-to-content');
 var stickableNavOffset;
@@ -607,12 +611,70 @@ $(window).on('resize', function (){
     },600);
 });
 
-$.urlParam = function(name){
-    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-    if (results==null){
-       return null;
+$('.bookingbtn').click(function(event){
+    if (!isValidForm()) {
+      $('#warning-message').addClass('d-block');
+      return false;
     }
-    else{
-       return decodeURI(results[1]) || 0;
+    event.preventDefault();
+    var url = window.location.origin + '/booking/sendmail';
+    var ci = $('#date-check-in').val();
+    var co = $('#date-check-out').val();
+    var adult = $('#adult').val();
+    var kid = $('#kid').val();
+    var guestname = $('#guest-name').val();
+    var guestcontact = $('#guest-contact').val();
+    var roomtype = $('#room-no').val();
+    var isPromotion = $('#checkbox-early-bird').val();
+
+    var datareq = {
+        'ci': ci,
+        'co': co,
+        'adult': adult,
+        'kid': kid,
+        'room': roomtype,
+        'email': guestcontact,
+        'name': guestname,
+        'promotion': isPromotion
     }
+    console.log(datareq);
+
+    $('.fa-spinner').addClass('d-inline')
+    $.ajax({
+        type: 'POST',
+        url: url,
+        data: datareq   
+    })
+    .done(function(data) { 
+      console.log(data); 
+      $('.fa-spinner.d-inline').removeClass('d-inline');
+      $('#message').text('Thank you !!!');
+      $('.thankyou').addClass('d-block');
+      $('#warning-message').removeClass('d-block');
+      $('.bookingbtn').removeClass('bookingbtn');
+    })
+    .fail(function(error) { 
+      console.log(error); 
+      $('.fa-spinner.d-inline').removeClass('d-inline');
+    })
+})
+
+function isValidForm() {
+    var form = document.getElementById('bookingform');
+    for(var i=0; i < form.elements.length; i++){
+      if(form.elements[i].value === '' && form.elements[i].hasAttribute('required')){ return false;}
+    }
+    return true
 }
+
+$('.lang').click(function(){
+    var langSelected = $(this).attr("data");
+    $.cookie('clang', langSelected);
+})
+
+$(document).ready(function (){ 
+    // Core Initialization  
+    Core.init();
+
+});
+  

@@ -40,49 +40,12 @@
   <body class="header-horizontal dark-overlay">
     <div id="body-wrapper">      
       <!-- Header -->
-      <header id="header" class="header-horizontal dark">
-        <!-- Module - Navigation -->
-        <nav id="navigation-main" class="module module-nav">
-            <ul class="nav nav-main-horizontal">
-                <li><a href="#home"><%= translation.Home %></a></li>
-                <li><a href="#about"><%= translation.Introduce %></a></li>
-                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
-                <li><a href="#features"><%= translation.Services %></a></li>
-                <li><a href="#gallery"><%= translation.Gallery %></a></li>
-                <li><a href="#promotion"><%= translation.Promotion %></a></li>
-                <li><a href="#who-we-are"><%= translation.Owner %></a></li>
-                <li><a href="#contact"><%= translation.Contact_us %></a></li>
-            </ul>
-            <div class="selector"></div>
-        </nav>
-        <!-- Module - Objects -->
-        <div class="module module-object" data-toggle="panel-objects">
-            <img class="object-image" src="img/photos/object_thumbnail.png" alt="" style="height: 36px">
-            <span class="object-name">Premium Hotel</span>
-            <span class="object-indicator"><i class="ti ti-menu"></i></span>
-        </div>
-        <!-- Module - Language -->
-        <nav class="module module-language mr-3">
-            <ul class="nav nav-main-horizontal nav-language">
-                <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
-                <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
-                <li><a id="lang-rus"class="lang lang-rus" href="/?clang=rus">RUS</a></li>
-                <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
-            </ul>
-        </nav>
-        <!-- Module - Navigation Toggle -->
-        <div class="module module-nav-toggle">
-            <a href="#" id="nav-toggle" class="nav-toggle"><span></span><span></span><span></span><span></span></a>
-        </div>
-      </header>
-      <!-- Header / End -->
+      <%- include partials/navBar.ejs %>
     
       <!-- Content -->
       <div id="content">
-  
         <!-- Section / Home -->
         <section id="home" class="section h-fullheight bg-dark cover dark">
-            
             <!-- Slider Main -->
             <div class="slider-main slider-kenburns inner-controls">
                 <%  for (var i=0; i<sliders.length; i++) {%>
@@ -532,65 +495,17 @@
     </div> <!-- END BODY WRAPPER -->
   
     <!-- Panel - Objects -->
-    <nav id="panel-objects">
-        <div class="panel-objects-container container dark">
-            <h3 class="text-center mb-5">Danh mục dịch vụ: </h3>
-            <div class="panel-objects-list row">
-                <div class="col-md-4 col-sm-6">
-                    <!-- Panel Objects Item -->
-                    <div class="panel-objects-item">
-                        <a href="/hotel" class="panel-objects-item-image"><img src="img/objects/panel-object01.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <!-- Panel Objects Item -->
-                    <div class="panel-objects-item">
-                        <a href="/mudbathspa" class="panel-objects-item-image"><img src="img/objects/panel-object02.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <!-- Panel Objects Item -->
-                    <div class="panel-objects-item">
-                        <a href="/weddingconvention" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <!-- Panel Objects Item -->
-                    <div class="panel-objects-item">
-                        <a href="/show" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                        <!-- Panel Objects Item -->
-                    <div class="panel-objects-item">
-                        <a href="/lakeview" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                        <!-- Panel Objects Item -->
-                    <div class="panel-objects-item">
-                        <a href="/water" class="panel-objects-item-image"><img src="img/objects/panel-object03.jpg" alt=""></a>
-                    </div>
-                </div>
-                
+    <%- include partials/panelBar.ejs %>
+    
+    <!-- Video Modal / Demo -->
+    <div class="modal modal-video fade" id="modalVideo" role="dialog">
+        <button class="close dark" data-dismiss="modal"></button>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <iframe height="500"></iframe>
             </div>
-        
-            <!-- Close -->
-            <button class="panel-objects-close close" data-toggle="panel-objects"></button>
-            
-        </div>
-  
-    </nav>
-  
-  <!-- Video Modal / Demo -->
-  <div class="modal modal-video fade" id="modalVideo" role="dialog">
-    <button class="close dark" data-dismiss="modal"></button>
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <iframe height="500"></iframe>
         </div>
     </div>
-  </div>
   
   
   <!-- LOAD CORE SCRIPT THEME -->
@@ -613,7 +528,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/plugins/rangePlugin.js"></script>
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
   <!-- JS Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js"></script>
   
