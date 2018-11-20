@@ -1,15 +1,4 @@
 /* eslint-disable */
-/* -----------------------------------------------------------------------------
-
-Chata - Modern Real Estate Template + E-Commerce
-
-File:           JS Core
-Version:        1.0
-Last change:    16/06/17 
-Author:         Suelo 
-
--------------------------------------------------------------------------------- */
-
 "use strict";
 
 var $body = $('body'),
@@ -24,10 +13,11 @@ var $body = $('body'),
 
 var Core = {
     init: function() {
-        // console.log('init');
+        console.log('init');
         this.Basic.init();
         this.Component.init();
     },
+
     Basic: {
         init: function() { 
             this.systemDetector();
@@ -142,91 +132,92 @@ var Core = {
         },
         navigation: function() {
 
-            // var $header = $('#header');
-            // var headerHeight = $('#header').height();
-            // var $mobileNav = $('#mobile-nav');
-            // var $section = $('.section','#content');
-            // var $body = $('body');
-            // var scrollOffset = 0;
-            // if ($header.hasClass('header-horizontal')) scrollOffset = -headerHeight;
+            var $header = $('#header');
+            var headerHeight = $('#header').height();
+            var $mobileNav = $('#mobile-nav');
+            var $section = $('.section','#content');
+            var $body = $('body');
+            var scrollOffset = 0;
+            if ($header.hasClass('header-horizontal')) scrollOffset = -headerHeight;
 
-            // var $scrollers = $('#header, #mobile-nav, [data-local-scroll]');
-            // $scrollers.find('a').on('click', function(){
-            //     $(this).blur();
-            // });
-            // $scrollers.localScroll({
-            //     offset: scrollOffset,
-            //     duration: 700
-            // });
+            var $scrollers = $('#header, #mobile-nav, [data-local-scroll]');
+            $scrollers.find('a').on('click', function(){
+                $(this).blur();
+            });
+            $scrollers.localScroll({
+                offset: scrollOffset,
+                duration: 700
+            });
 
-            // var $mainNavigation = $('#navigation-main'),
-            //     $menuItem = $('#navigation-main li > a'),
-            //     mainMenuOffset = null,
-            //     $selector = $mainNavigation.children('.selector');
+            var $mainNavigation = $('#navigation-main'),
+                $menuItem = $('#navigation-main li > a'),
+                mainMenuOffset = null,
+                $selector = $mainNavigation.children('.selector');
 
-            // var setMenuSelector = function() {
-            //     var $activeItem = $mainNavigation.find('a.active');
-            //     if($activeItem.length != 0) {
-            //         mainMenuOffset = $mainNavigation.offset().left;
-            //         $selector.css({
-            //             'width': $activeItem.outerWidth(),
-            //             'left': $activeItem.offset().left - mainMenuOffset + 'px'
-            //         });
-            //     }
-            // }
+            var setMenuSelector = function() {
+                var $activeItem = $mainNavigation.find('a.active');
+                if($activeItem.length != 0) {
+                    mainMenuOffset = $mainNavigation.offset().left;
+                    $selector.css({
+                        'width': $activeItem.outerWidth(),
+                        'left': $activeItem.offset().left - mainMenuOffset + 'px'
+                    });
+                }
+            }
 
-            // var checkMenuItem = function(id) {
-            //     $menuItem.each(function(){
-            //         var link = $(this).attr('href');
-            //         if(id==link) {
-            //             $(this).addClass('active');
-            //             setMenuSelector();
-            //         }
-            //         else $(this).removeClass('active');
-            //     });
-            //     // Hide Mobile Nav
-            //     $mainNavigation.removeClass('show');
-            //     $header.removeClass('open');
-            //     $navToggle.removeClass('open');
-            // }
+            var checkMenuItem = function(id) {
+                $menuItem.each(function(){
+                    var link = $(this).attr('href');
+                    if(id==link) {
+                        $(this).addClass('active');
+                        setMenuSelector();
+                    }
+                    else $(this).removeClass('active');
+                });
+                // Hide Mobile Nav
+                $mainNavigation.removeClass('show');
+                $header.removeClass('open');
+                $navToggle.removeClass('open');
+            }
 
-            // $section.waypoint({
-            //     handler: function(direction) {
-            //         if(direction=='up') {
-            //             var id = '#'+this.element.id;
-            //             checkMenuItem(id);
-            //         }
-            //     },
-            //     offset: function() {
-            //         if ($header.hasClass('header-horizontal')) return -this.element.clientHeight+headerHeight;
-            //         else return -this.element.clientHeight+2;
-            //     }
-            // });
-            // $section.waypoint({
-            //     handler: function(direction) {
-            //         if(direction=='down') {
-            //             var id = '#'+this.element.id;
-            //             checkMenuItem(id);
-            //         }
-            //     },
-            //     offset: function() {
-            //         if ($header.hasClass('header-horizontal')) return headerHeight+1;
-            //         else return 1;
-            //     }
-            // });
+            $section.waypoint({
+                handler: function(direction) {
+                    if(direction=='up') {
+                        var id = '#'+this.element.id;
+                        checkMenuItem(id);
+                    }
+                },
+                offset: function() {
+                    if ($header.hasClass('header-horizontal')) return -this.element.clientHeight+headerHeight;
+                    else return -this.element.clientHeight+2;
+                }
+            });
+            $section.waypoint({
+                handler: function(direction) {
+                    if(direction=='down') {
+                        var id = '#'+this.element.id;
+                        checkMenuItem(id);
+                    }
+                },
+                offset: function() {
+                    if ($header.hasClass('header-horizontal')) return headerHeight+1;
+                    else return 1;
+                }
+            });
 
-            // // Mobile Navigation
-            // $navToggle.on('click', function(){
-            //     $(this).toggleClass('open');
-            //     if($header.hasClass('header-horizontal')) {
-            //         $mainNavigation.toggleClass('show');
-            //     } else {
-            //         $header.toggleClass('open');
-            //     }
-            //     return false;
-            // });
+            // Mobile Navigation
+            $navToggle.on('click', function(){
+                $(this).toggleClass('open');
+                if($header.hasClass('header-horizontal')) {
+                    $mainNavigation.toggleClass('show');
+                } else {
+                    $header.toggleClass('open');
+                }
+                return false;
+            });
         }
     },
+
     Component: {
         init: function() {  
             this.carousel(); 
@@ -235,49 +226,42 @@ var Core = {
             this.map();
             this.modal();
             this.panelObjects();
-            this.plan();
             this.tooltip();
             this.twitter();
         },
         carousel: function() {
-
-            // $('.carousel','#content').slick();
-
-            // $('.slider-main','#content').slick({
-            //     fade: true,
-            //     dots: false,
-            //     speed: 800,
-            //     arrows: false,
-            //     autoplay: true,
-            //     autoplaySpeed: 4500,
-            //     pauseOnHover: false,
-            //     initialSlide: 1,
-            //     asNavFor: '.slider-main-nav',
-            // });
-
-            // $('.slider-main-nav','#content').slick({
-            //     arrows: true,
-            //     slidesToShow: 3,
-            //     slidesToScroll: 1,
-            //     infinite: true,
-            //     focusOnSelect: true, 
-            //     centerMode: true,
-            //     asNavFor: '.slider-main'
-            // });
-
-            // $('.slider-main','#content').slick('slickGoTo',0,true);
-
-            // $('.carousel-gallery','#content').slick({
-            //     arrows: true,
-            //     infinite: true,
-            //     dots: true,
-            //     autoplay: true,
-            //     autoplaySpeed: 4000
-            // });
+            $('.carousel','#content').slick();
+            $('.slider-main','#content').slick({
+                fade: true,
+                dots: false,
+                speed: 800,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 4500,
+                pauseOnHover: false,
+                initialSlide: 1,
+                asNavFor: '.slider-main-nav',
+            });
+            $('.slider-main-nav','#content').slick({
+                arrows: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                focusOnSelect: true, 
+                centerMode: true,
+                asNavFor: '.slider-main'
+            });
+            $('.slider-main','#content').slick('slickGoTo',0,true);
+            $('.carousel-gallery','#content').slick({
+                arrows: true,
+                infinite: true,
+                dots: true,
+                autoplay: true,
+                autoplaySpeed: 4000
+            });
 
         },
         forms: function(){
-
             // Validate Form 
             $('[data-validate]').each(function(){
                 $(this).validate({
@@ -377,150 +361,132 @@ var Core = {
         },
         gallery: function() {
 
-            // var galleryContainer = '';
-            //     galleryContainer += '<!-- Root element of PhotoSwipe. Must have class pswp. -->';
-            //     galleryContainer += '<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">';
-            //     galleryContainer += '    <div class="pswp__bg"></div>';
-            //     galleryContainer += '    <div class="pswp__scroll-wrap">';
-            //     galleryContainer += '        <div class="pswp__container">';
-            //     galleryContainer += '            <div class="pswp__item"></div>';
-            //     galleryContainer += '            <div class="pswp__item"></div>';
-            //     galleryContainer += '            <div class="pswp__item"></div>';
-            //     galleryContainer += '        </div>';
-            //     galleryContainer += '        <div class="pswp__ui pswp__ui--hidden">';
-            //     galleryContainer += '            <div class="pswp__top-bar">';
-            //     galleryContainer += '                <div class="pswp__counter"></div>';
-            //     galleryContainer += '                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>';
-            //     galleryContainer += '                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>';
-            //     galleryContainer += '                <button class="pswp__button pswp__button--zoom" title="Zoom in\/out"></button>';
-            //     galleryContainer += '                <div class="pswp__preloader">';
-            //     galleryContainer += '                    <div class="pswp__preloader__icn">';
-            //     galleryContainer += '                      <div class="pswp__preloader__cut">';
-            //     galleryContainer += '                        <div class="pswp__preloader__donut"></div>';
-            //     galleryContainer += '                      </div>';
-            //     galleryContainer += '                    </div>';
-            //     galleryContainer += '                </div>';
-            //     galleryContainer += '            </div>';
-            //     galleryContainer += '            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">';
-            //     galleryContainer += '                <div class="pswp__share-tooltip"></div> ';
-            //     galleryContainer += '            </div>';
-            //     galleryContainer += '            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">';
-            //     galleryContainer += '            </button>';
-            //     galleryContainer += '            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">';
-            //     galleryContainer += '            </button>';
-            //     galleryContainer += '            <div class="pswp__caption">';
-            //     galleryContainer += '                <div class="pswp__caption__center"></div>';
-            //     galleryContainer += '            </div>';
-            //     galleryContainer += '        </div>';
-            //     galleryContainer += '    </div>';
-            //     galleryContainer += '</div>';
+            var galleryContainer = '';
+                galleryContainer += '<!-- Root element of PhotoSwipe. Must have class pswp. -->';
+                galleryContainer += '<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">';
+                galleryContainer += '    <div class="pswp__bg"></div>';
+                galleryContainer += '    <div class="pswp__scroll-wrap">';
+                galleryContainer += '        <div class="pswp__container">';
+                galleryContainer += '            <div class="pswp__item"></div>';
+                galleryContainer += '            <div class="pswp__item"></div>';
+                galleryContainer += '            <div class="pswp__item"></div>';
+                galleryContainer += '        </div>';
+                galleryContainer += '        <div class="pswp__ui pswp__ui--hidden">';
+                galleryContainer += '            <div class="pswp__top-bar">';
+                galleryContainer += '                <div class="pswp__counter"></div>';
+                galleryContainer += '                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>';
+                galleryContainer += '                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>';
+                galleryContainer += '                <button class="pswp__button pswp__button--zoom" title="Zoom in\/out"></button>';
+                galleryContainer += '                <div class="pswp__preloader">';
+                galleryContainer += '                    <div class="pswp__preloader__icn">';
+                galleryContainer += '                      <div class="pswp__preloader__cut">';
+                galleryContainer += '                        <div class="pswp__preloader__donut"></div>';
+                galleryContainer += '                      </div>';
+                galleryContainer += '                    </div>';
+                galleryContainer += '                </div>';
+                galleryContainer += '            </div>';
+                galleryContainer += '            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">';
+                galleryContainer += '                <div class="pswp__share-tooltip"></div> ';
+                galleryContainer += '            </div>';
+                galleryContainer += '            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">';
+                galleryContainer += '            </button>';
+                galleryContainer += '            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">';
+                galleryContainer += '            </button>';
+                galleryContainer += '            <div class="pswp__caption">';
+                galleryContainer += '                <div class="pswp__caption__center"></div>';
+                galleryContainer += '            </div>';
+                galleryContainer += '        </div>';
+                galleryContainer += '    </div>';
+                galleryContainer += '</div>';
 
-            // $body.append(galleryContainer);
+            $body.append(galleryContainer);
 
-            // // Photoswipe Gallery
-            // var openPhotoSwipe = function(slide, galleryItems) {
-            //     var pswpElement = document.querySelectorAll('.pswp')[0];
+            // Photoswipe Gallery
+            var openPhotoSwipe = function(slide, galleryItems) {
+                var pswpElement = document.querySelectorAll('.pswp')[0];
 
-            //     var options = {
-            //         index: slide // start at first slide
-            //     };
+                var options = {
+                    index: slide // start at first slide
+                };
 
-            //     // Initializes and opens PhotoSwipe
-            //     var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
-            //     gallery.init();
-            // }
+                // Initializes and opens PhotoSwipe
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, galleryItems, options);
+                gallery.init();
+            }
 
-            // $('[data-toggle="gallery"]').on('click', function(){
-            //     var items = eval($(this).data('items'));
-            //     var slide = eval($(this).data('slide'));
-            //     openPhotoSwipe(slide,items);
-            //     return false;
-            // });
+            $('[data-toggle="gallery"]').on('click', function(){
+                var items = eval($(this).data('items'));
+                var slide = eval($(this).data('slide'));
+                openPhotoSwipe(slide,items);
+                return false;
+            });
 
         },
         map: function() {
-
-            // var $googleMap = $('#google-map');
-
-            // if($googleMap.length) {
-
-            //     var yourLatitude = 12.255900;   
-            //     var yourLongitude = 109.195280;    
-
-            //     var pickedStyle = $googleMap.data('style');     
-            //     var wy = [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}];
-            //     var apple = [{"featureType":"landscape.man_made","elementType":"all","stylers":[{"color":"#faf5ed"},{"lightness":"0"},{"gamma":"1"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#bae5a6"}]},{"featureType":"road","elementType":"all","stylers":[{"weight":"1.00"},{"gamma":"1.8"},{"saturation":"0"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"hue":"#ffb200"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"lightness":"0"},{"gamma":"1"}]},{"featureType":"transit.station.airport","elementType":"all","stylers":[{"hue":"#b000ff"},{"saturation":"23"},{"lightness":"-4"},{"gamma":"0.80"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#a0daf2"}]}];
-            //     var dark = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
-
-            //     var mapOptions = {
-            //         zoom: 15,
-            //         center: {lat: yourLatitude, lng: yourLongitude},
-            //         mapTypeControl: false,
-            //         panControl: false,
-            //         zoomControl: true,
-            //         scaleControl: false,
-            //         streetViewControl: false,
-            //         scrollwheel: false,
-            //         styles: eval(pickedStyle)
-            //     };
-
-            //     var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
-            //     var myLatLng = new google.maps.LatLng(yourLatitude,yourLongitude);
-            //     var image = {
-            //         url: 'img/location-pin.png',
-            //         anchor: new google.maps.Point(79, 115),
-            //     };
-            //     var myLocation = new google.maps.Marker({
-            //         position: myLatLng,
-            //         map: map,
-            //         icon: image
-            //     });
-            // }
-        },
-        plan: function() {
+            var $googleMap = $('#google-map');
+  
+            if($googleMap.length) {
             
-            // Product Feature
-            // $('.plan-container .plan-feature','#content').each(function(){
-            //     var x = $(this).data('x');
-            //     var y = $(this).data('y');
-            //     $(this).css({
-            //         'top': y,
-            //         'left': x
-            //     });
-            // });
-
+                var yourLatitude = 12.255900;   
+                var yourLongitude = 109.195280;    
+            
+                var pickedStyle = $googleMap.data('style');     
+                var wy = [{"featureType":"all","elementType":"geometry.fill","stylers":[{"weight":"2.00"}]},{"featureType":"all","elementType":"geometry.stroke","stylers":[{"color":"#9c9c9c"}]},{"featureType":"all","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape.man_made","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#eeeeee"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#7b7b7b"}]},{"featureType":"road","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#46bcec"},{"visibility":"on"}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#c8d7d4"}]},{"featureType":"water","elementType":"labels.text.fill","stylers":[{"color":"#070707"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#ffffff"}]}];
+                var apple = [{"featureType":"landscape.man_made","elementType":"all","stylers":[{"color":"#faf5ed"},{"lightness":"0"},{"gamma":"1"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#bae5a6"}]},{"featureType":"road","elementType":"all","stylers":[{"weight":"1.00"},{"gamma":"1.8"},{"saturation":"0"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"hue":"#ffb200"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"lightness":"0"},{"gamma":"1"}]},{"featureType":"transit.station.airport","elementType":"all","stylers":[{"hue":"#b000ff"},{"saturation":"23"},{"lightness":"-4"},{"gamma":"0.80"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#a0daf2"}]}];
+                var dark = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}];
+            
+                var mapOptions = {
+                    zoom: 15,
+                    center: {lat: yourLatitude, lng: yourLongitude},
+                    mapTypeControl: false,
+                    panControl: false,
+                    zoomControl: true,
+                    scaleControl: false,
+                    streetViewControl: false,
+                    scrollwheel: false,
+                    styles: eval(pickedStyle)
+                };
+            
+                var map = new google.maps.Map(document.getElementById('google-map'), mapOptions);
+                var myLatLng = new google.maps.LatLng(yourLatitude,yourLongitude);
+                var image = {
+                    url: 'img/location-pin.png',
+                    anchor: new google.maps.Point(79, 115),
+                };
+                var myLocation = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    icon: image
+                });
+            }
         },
+        
         modal: function() {
+            $('.modal[data-timeout]').each(function(){
+                var timeout = $(this).data('timeout'),
+                    $this = $(this);
+                setTimeout(function() {
+                    $this.modal('show');
+                }, timeout)
+            });
+            $('[data-toggle="video-modal"]').on('click', function() {
+                var modal = $(this).data('target'),
+                    video = $(this).data('video')
 
-            // $('.modal[data-timeout]').each(function(){
-            //     var timeout = $(this).data('timeout'),
-            //         $this = $(this);
-            //     setTimeout(function() {
-            //         $this.modal('show');
-            //     }, timeout)
-            // });
+                $(modal + ' iframe').attr('src', video + '?autoplay=1');
+                $(modal).modal('show');
 
-            // $('[data-toggle="video-modal"]').on('click', function() {
-            //     var modal = $(this).data('target'),
-            //         video = $(this).data('video')
-
-            //     $(modal + ' iframe').attr('src', video + '?autoplay=1');
-            //     $(modal).modal('show');
-
-            //     $(modal).on('hidden.bs.modal', function () {
-            //         var $modalContent = $(modal + ' .modal-content')
-            //         $(modal + ' iframe').remove();
-            //         $modalContent.html('<iframe height="500"></iframe>');
-            //     })
-
-            //     return false;
-            // });
-
+                $(modal).on('hidden.bs.modal', function () {
+                    var $modalContent = $(modal + ' .modal-content')
+                    $(modal + ' iframe').remove();
+                    $modalContent.html('<iframe height="500"></iframe>');
+                })
+                return false;
+            });
         },
+
         panelObjects: function() {
-
             // Panel Objects
-
             var $panelObjects = $('#panel-objects'),
                 $panelObjectsToggle = $('[data-toggle="panel-objects"]');
 
@@ -545,10 +511,9 @@ var Core = {
 
         },
         tooltip: function() {
-
             $("[data-toggle='tooltip']").tooltip();
-
         },
+
         twitter: function() {
 
             var $twitterFeed = $('#twitter-feed');
@@ -579,10 +544,11 @@ Core.Basic.pageTransition();
 $(document).ready(function (){ 
     // Core Initialization  
     Core.init();
+    
+    //update languagues actived
     $('.lang').removeClass('active');
     
     var clang;
-    console.log($.urlParam('clang'));
     if($.urlParam('clang') === null) {
         clang = ".lang-en"
     } else {
@@ -640,14 +606,6 @@ $(window).on('resize', function (){
         Waypoint.refreshAll()
     },600);
 });
-
-
-// $('.nav-language li').click(function(){
-//     console.log($this.urlParam('clang'));
-//     alert();
-//     return;
-// })
-
 
 $.urlParam = function(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
