@@ -59,18 +59,27 @@
                 <div class="booking-form">
                   <span class="form-label fa fa-warning" id="warning-message" style="display: none; color: red; font-weight: normal"> Please input the requirement fill</span>
                   <form name='booking-form' id="bookingform">
+                    
                     <div class="form-group">
-                      <span class="form-label">Guest name booking </span>
+                      <span class="form-label">Guest name </span>
                       <input class="form-control" id="guest-name" type="text" placeholder=" Please give us your name" required />
                     </div>
-                    <div class="form-group">
-                      <span class="form-label">Email booking </span>
-                      <input class="form-control" id='guest-contact' type="text" placeholder=" Please give us your email" required />
+
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <span class="form-label">Email</span>
+                          <input class="form-control" id='guest-contact' type="text" placeholder=" Please give us your email" required />
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <span class="form-label">Tel</span>
+                          <input class="form-control" id='guest-tel' type="text" placeholder=" Please give us your telephone number" required />
+                        </div>
+                      </div>
                     </div>
-                    <div class="form-group">
-                      <span class="form-label">Tel booking </span>
-                      <input class="form-control" id='guest-tel' type="text" placeholder=" Please give us your telephone number" required />
-                    </div>
+
                     <div class="row">
                       <div class="col-sm-6">
                         <div class="form-group">
@@ -128,6 +137,16 @@
                           <span class="select-arrow"></span>
                         </div>
                       </div>
+                    </div>
+
+                    <div class="form-group">
+                      <span class="form-label">Coupon code </span>
+                      <input class="form-control" id="coupon-code" type="text" placeholder=" Put your coupon code to get promotion" />
+                    </div>
+
+                    <div class="form-group">
+                      <span class="form-label">Book notes </span>
+                      <textarea class="form-control md-textarea" rows="3" id="book-notes" placeholder=" Please give us your notes for this booking" style="height: auto"/></textarea>
                     </div>
                     
                     <div class="form-group" style="margin-top: 20px; padding-left: 20px; padding-top: 10px; border-top: #e5e5e5 1px solid;">

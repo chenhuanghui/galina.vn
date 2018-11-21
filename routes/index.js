@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var hoteldata = require('../public/data/hoteldata.json');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -54,6 +55,7 @@ router.get('/', function(req, res) {
   ]
   res.render('hotelPage', { 
     title: 'GALINA HOTEL',
+    data: hoteldata,
     sliders: sliders,
     sliders_thumb: sliders_thumb,
     gallery: gallery,

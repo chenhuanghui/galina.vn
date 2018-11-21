@@ -48,10 +48,10 @@
         <section id="home" class="section h-fullheight bg-dark cover dark">
             <!-- Slider Main -->
             <div class="slider-main slider-kenburns inner-controls">
-                <%  for (var i=0; i<sliders.length; i++) {%>
+                <%  for (var i=0; i<data.sliders.length; i++) {%>
                     <div class="slide">
                         <div class="slide-bg bg-image-holder bg-image-fixed">
-                            <img src="<%= sliders[i] %>" alt="">
+                            <img src="<%= data.sliders[i] %>" alt="">
                         </div>
                         <div class="slide-content container text-center">
                             <!-- <h1>Toàn cảnh khách sạn</h1> -->
@@ -62,8 +62,8 @@
             
             <!-- Slider Navigation -->
             <div class="slider-main-nav">
-                <%  for (var i=0; i<sliders_thumb.length; i++) {%>
-                    <div class="slide"><img src="<%= sliders_thumb[i] %>" alt=""></div>    
+                <%  for (var i=0; i<data.sliders_thumb.length; i++) {%>
+                    <div class="slide"><img src="<%= data.sliders_thumb[i] %>" alt=""></div>    
                 <% } %>
             </div>
   
@@ -142,24 +142,23 @@
                         <!-- Objects - Grid-->
                         <div class="objects-grid gutters-sm row">
                             
-                            <% for (var i=0; i<roomlist.length; i++) { %>
+                            <% for (var i=0; i<data.roomlist.length; i++) { %>
                             
                             <div class="col-lg-3 col-6">
-                                <!-- Object - Vertical -->
                                 <div class="object object-vertical">
                                     <div class="object-image">
-                                        <a class="link-inherit" href="/booking?service=hotel"><img src= "<%= roomlist[i].imgRoom %>" alt=""></a>
+                                        <a class="link-inherit" href="/booking?service=hotel"><img src= "<%= data.roomlist[i].imgRoom %>" alt=""></a>
                                     </div>
                                     <div class="object-content">
-                                        <h5 class="object-title"><a class="link-inherit" href="<%= roomlist[i].link %>"> <%= roomlist[i].name %> </a></h5>
+                                        <h5 class="object-title"><a class="link-inherit" href="<%= data.roomlist[i].link %>"> <%= roomlist[i].name %> </a></h5>
                                         <ul class="object-details list-unstyled">
-                                            <li><span class="text-muted"><%= translation.square %>   </span> <%= roomlist[i].square %> m<sup>2</sup></li>
-                                            <li><span class="text-muted"><%= translation.windows %>  </span> <%= roomlist[i].windows %></li>
-                                            <li><span class="text-muted"><%= translation.balcone %>  </span> <%= roomlist[i].balcone %></li>
-                                            <li><span class="text-muted"><%= translation.view %>     </span> <%= roomlist[i].view %></li>
-                                            <li><span class="text-muted"><%= translation.capacity %> </span> 02 <%= translation.adult %>, 02 <%= translation.kid %></li>
+                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.square %>   </span> <span class="col-lg5"> <%= data.roomlist[i].square %> m<sup>2</sup> </span> </li>
+                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.windows %>  </span> <span class="col-lg5"> <%= data.roomlist[i].windows %></span></li>
+                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.balcone %>  </span> <span class="col-lg5"> <%= data.roomlist[i].balcone %></span></li>
+                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.view %>     </span> <span class="col-lg5"> <%= data.roomlist[i].view.vi %></span></li>
+                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.capacity %> </span> <span class="col-lg5"> 02 <%= translation.adult %>, 02 <%= translation.kid %></span></li>
                                         </ul>
-                                        <span class="object-price"> <%= roomlist[i].price %> VND <sup><%= translation.night %></sup> </span>
+                                        <span class="object-price"> <%= data.roomlist[i].price %> VND <sup><%= translation.night %></sup> </span>
                                         <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
                                     </div> 
                                 </div>
