@@ -19,21 +19,10 @@
   <link rel="stylesheet" href="css/booking-style.css" />
   <link id="theme" rel="stylesheet" href="css/themes/theme-blue.css" />
 
-  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css" />
-  <link rel="stylesheet" href="plugins/animate.css/animate.min.css" />
-  <link rel="stylesheet" href="plugins/animsition/dist/css/animsition.min.css" />
-  <link rel="stylesheet" href="plugins/photoswipe/dist/photoswipe.css" />
-  <link rel="stylesheet" href="plugins/photoswipe/dist/default-skin/default-skin.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/flatpickr.min.css">    
-
-  <!-- CSS Icons -->
-  <link rel="stylesheet" href="css/themify-icons.css" />
-  <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css" />
+  <!-- CSS library load -->
+  <%- include partials/styleSection.ejs %>
   
-  <!-- Start of  Zendesk Widget script -->
-  <!-- <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=668020bd-1a52-431a-a10a-e3fd4e191712"> </script> -->
-  <!-- End of  Zendesk Widget script -->
+  
 </head>
 
 <body class="header-horizontal dark-overlay">
@@ -205,27 +194,8 @@
 
   <%- include partials/panelBar.ejs %>
   
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="plugins/animsition/dist/js/animsition.min.js"></script>
-  <script src="plugins/tether/dist/js/tether.min.js"></script>
-  <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-  <script src="plugins/jquery.appear/jquery.appear.js"></script>
-  <script src="plugins/jquery.scrollto/jquery.scrollTo.min.js"></script>
-  <script src="plugins/jquery.localscroll/jquery.localScroll.min.js"></script>
-  <script src="plugins/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-  <script src="plugins/photoswipe/dist/photoswipe.min.js"></script>
-  <script src="plugins/photoswipe/dist/photoswipe-ui-default.min.js"></script>
-  <script src="plugins/twitter-fetcher/js/twitterFetcher_min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/flatpickr.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/plugins/rangePlugin.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
-  <script src="js/core.js"></script>
+  <!-- Script library for page -->
+  <%- include partials/scriptSection.ejs %>  
   
   <script>
     $(document).ready(function(){
