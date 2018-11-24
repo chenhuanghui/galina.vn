@@ -22,7 +22,7 @@
   "accom_check-in": "Check-in",
   "check-out": "Check-out",
   "adult": "Aduls",
-  "kid" : "Kid",
+  "kid" : "Kids",
   "guest_name": "Guest name",
   "guest_contact": "Phone number/email",
   "room_type": "Kid of Accomodation",
@@ -82,6 +82,8 @@
   "contact_head": "Contact us",
   "street":"05 Hung Vuong,",
   "ward": "Loc Tho ward,",
-  "city": "Nha Trang, Khanh Hoa"  
-  
+  "city": "Nha Trang, Khanh Hoa" , 
+  "breakfast": "Breakfast",
+  "included": "Included",
+  "partial_sea_view":"Partial Sea View"
 }

@@ -117,61 +117,8 @@
         </section>
   
         <!-- Section / rooms -->
-        <section id="rooms" class="section bg-light pt-0 pb-5">
-  
-            <!-- Objects - Search -->
-            <div class="objects-search bg-dark dark">
-                <div class="bg-image-holder bg-image-fixed zooming"><img src="img/photos/search-bg.jpg" alt=""></div>
-                <div class="container">
-                    <h1 class="mb-1"> <%= translation.accom_welcome1 %> </h1>
-                    <p class="lead text-muted"> <%= translation.accom_welcome2 %> </p>
-                    <hr>
-                </div>
-            </div>
-  
-            <div class="objects-container container">
-                <div class="text-right">
-                    <!-- Objects - Change Display -->
-                    <ul class="nav nav-view" role="tablist">
-                        <!-- <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#grid_view"><i class="fa fa-th"></i></a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#list_view"><i class="fa fa-th-list"></i></a></li> -->
-                    </ul>
-                </div>
-                <div class="tab-content">
-                    <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
-                        <!-- Objects - Grid-->
-                        <div class="objects-grid gutters-sm row">
-                            
-                            <% for (var i=0; i<data.roomlist.length; i++) { %>
-                            
-                            <div class="col-lg-3 col-6">
-                                <div class="object object-vertical">
-                                    <div class="object-image">
-                                        <a class="link-inherit" href="/booking?service=hotel"><img src= "<%= data.roomlist[i].imgRoom %>" alt=""></a>
-                                    </div>
-                                    <div class="object-content">
-                                        <h5 class="object-title"><a class="link-inherit" href="<%= data.roomlist[i].link %>"> <%= roomlist[i].name %> </a></h5>
-                                        <ul class="object-details list-unstyled">
-                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.square %>   </span> <span class="col-lg5"> <%= data.roomlist[i].square %> m<sup>2</sup> </span> </li>
-                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.windows %>  </span> <span class="col-lg5"> <%= data.roomlist[i].windows %></span></li>
-                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.balcone %>  </span> <span class="col-lg5"> <%= data.roomlist[i].balcone %></span></li>
-                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.view %>     </span> <span class="col-lg5"> <%= data.roomlist[i].view.vi %></span></li>
-                                            <li class="row gutters-lg align-items-center"><span class="text-muted col-lg7"><%= translation.capacity %> </span> <span class="col-lg5"> 02 <%= translation.adult %>, 02 <%= translation.kid %></span></li>
-                                        </ul>
-                                        <span class="object-price"> <%= data.roomlist[i].price %> VND <sup><%= translation.night %></sup> </span>
-                                        <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
-                                    </div> 
-                                </div>
-                            </div>
-                            
-                            <% } %>
-                        </div>
-                    </div>
-                  </div>  
-            </div>
-  
-        </section> 
-  
+        <%- include partials/hotelPage/roomSection.ejs %>  
+
         <!-- Section / Features -->
         <section id="features" class="section">
   

@@ -1,0 +1,209 @@
+<section id="rooms" class="section bg-light pt-0 pb-5">
+  
+    <!-- Objects - Search -->
+    <div class="objects-search bg-dark dark">
+      <div class="bg-image-holder bg-image-fixed zooming"><img src="img/photos/search-bg.jpg" alt=""></div>
+      <div class="container">
+        <h1 class="mb-1"> <%= translation.accom_welcome1 %> </h1>
+        <p class="lead text-muted"> <%= translation.accom_welcome2 %> </p>
+        <hr>
+      </div>
+    </div>
+
+    <div class="objects-container container">
+      <div class="text-right">
+        <!-- Objects - Change Display -->
+        <ul class="nav nav-view" role="tablist">
+            <!-- <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#grid_view"><i class="fa fa-th"></i></a></li>
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#list_view"><i class="fa fa-th-list"></i></a></li> -->
+        </ul>
+      </div>
+      <div class="tab-content">
+          <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
+            <div class="objects-grid gutters-sm row">
+                
+                <!-- #room-block /Superior-->
+                <div class="col-lg-3 col-12">
+                    <div class="object object-vertical">
+                      <div class="object-image">
+                          <a class="link-inherit" href="/booking?service=hotel"><img src= "img/hotel/room-superior.jpg" alt=""></a>
+                      </div>
+                      <div class="object-content">
+                          <h5 class="object-title"><a class="link-inherit" href="#"> Superior </a></h5>
+                          <ul class="object-details list-unstyled">
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.square %></span>
+                              <span class="col-7"> 32 m<sup>2</sup></span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.windows %></span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.yes %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"> <%= translation.balcone %> </span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-fail ml-2"></i> <%= translation.no %> </span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.view %></span> 
+                              <span class="col-7"> <%= translation.sea_view %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.capacity %> </span> 
+                              <span class="col-7"> 02 <%= translation.adult %>, 02 <%= translation.kid %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                                <span class="text-muted col-5"><%= translation.breakfast %> </span> 
+                                <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.included %> </span>
+                              </li>
+                          </ul>
+                          <span class="object-price"> 1.800.000 <sup> VND /<%= translation.night %></sup> </span>
+                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                      </div> 
+                    </div>
+                </div> <!-- #end.room-block-->
+                
+                <!-- #room-block /Deluxe-->
+                <div class="col-lg-3 col-12">
+                    <div class="object object-vertical">
+                      <div class="object-image">
+                          <a class="link-inherit" href="/booking?service=hotel"><img src= "img/hotel/room-deluxe.jpg" alt=""></a>
+                      </div>
+                      <div class="object-content">
+                          <h5 class="object-title"><a class="link-inherit" href="#"> Deluxe </a></h5>
+                          <ul class="object-details list-unstyled">
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.square %></span>
+                              <span class="col-7"> 37 m<sup>2</sup></span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.windows %></span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.yes %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"> <%= translation.balcone %> </span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.yes %> </span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.view %></span> 
+                              <span class="col-7"> <%= translation.partial_sea_view %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.capacity %> </span> 
+                              <span class="col-7"> 02 <%= translation.adult %>, 02 <%= translation.kid %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                                <span class="text-muted col-5"><%= translation.breakfast %> </span> 
+                                <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.included %> </span>
+                              </li>
+                          </ul>
+                          <span class="object-price"> 2.100.000 <sup> VND /<%= translation.night %></sup> </span>
+                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                      </div> 
+                    </div>
+                </div> <!-- #end.room-block-->
+                
+                <!-- #room-block /Suite City View-->
+                <div class="col-lg-3 col-12">
+                    <div class="object object-vertical">
+                      <div class="object-image">
+                          <a class="link-inherit" href="/booking?service=hotel"><img src= "img/hotel/room-suite-city.jpg" alt=""></a>
+                      </div>
+                      <div class="object-content">
+                          <h5 class="object-title"><a class="link-inherit" href="#"> Suite City View </a></h5>
+                          <ul class="object-details list-unstyled">
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.square %></span>
+                              <span class="col-7"> 52 m<sup>2</sup></span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.windows %></span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.yes %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"> <%= translation.balcone %> </span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.yes %> </span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.view %></span> 
+                              <span class="col-7"> <%= translation.city_view %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.capacity %> </span> 
+                              <span class="col-7"> 02 <%= translation.adult %>, 02 <%= translation.kid %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                                <span class="text-muted col-5"><%= translation.breakfast %> </span> 
+                                <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.included %> </span>
+                              </li>
+                          </ul>
+                          <span class="object-price"> 2.400.000 <sup> VND /<%= translation.night %></sup> </span>
+                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                      </div> 
+                    </div>
+                </div> <!-- #end.room-block-->
+
+                <!-- #room-block /Suite Sea View-->
+                <div class="col-lg-3 col-12">
+                    <div class="object object-vertical">
+                      <div class="object-image">
+                          <a class="link-inherit" href="/booking?service=hotel"><img src= "img/hotel/room-suite-sea.jpg" alt=""></a>
+                      </div>
+                      <div class="object-content">
+                          <h5 class="object-title"><a class="link-inherit" href="#"> Suite Sea View </a></h5>
+                          <ul class="object-details list-unstyled">
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.square %></span>
+                              <span class="col-7"> 56 m<sup>2</sup></span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.windows %></span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.yes %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"> <%= translation.balcone %> </span> 
+                              <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.yes %> </span>
+                            </li>
+
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.view %></span> 
+                              <span class="col-7"> <%= translation.sea_view %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                              <span class="text-muted col-5"><%= translation.capacity %> </span> 
+                              <span class="col-7"> 02 <%= translation.adult %>, 02 <%= translation.kid %></span>
+                            </li>
+                            
+                            <li class="row gutters align-items-left">
+                                <span class="text-muted col-5"><%= translation.breakfast %> </span> 
+                                <span class="col-7"> <i class="fa fa-check-circle text-success ml-2"></i> <%= translation.included %> </span>
+                              </li>
+                          </ul>
+                          <span class="object-price"> 2.800.000 <sup> VND /<%= translation.night %></sup> </span>
+                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%= translation.detail %></a>
+                      </div> 
+                    </div>
+                </div> <!-- #end.room-block-->
+                
+            </div>
+          </div>
+        </div>  
+    </div>
+</section> 
