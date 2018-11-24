@@ -20,6 +20,8 @@ router.post('/sendmail', function(req, res){
                   + '\n • Tel:' + req.body.tel 
                   + '\n • Name: ' + req.body.name 
                   + '\n • Room name: ' + req.body.room
+                  + '\n • Coupon code: ' + req.body.couponCode
+                  + '\n • Book note: ' + req.body.bookNote
                   + '\n\n Thanks & Best regard,'
                   + '\n GALINA RESERVATION TEAM'
                   + '\n ____________________________'

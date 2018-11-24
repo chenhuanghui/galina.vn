@@ -31,6 +31,9 @@
   <link rel="stylesheet" href="css/themify-icons.css" />
   <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css" />
   
+  <!-- Start of  Zendesk Widget script -->
+  <!-- <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=668020bd-1a52-431a-a10a-e3fd4e191712"> </script> -->
+  <!-- End of  Zendesk Widget script -->
 </head>
 
 <body class="header-horizontal dark-overlay">
@@ -66,16 +69,16 @@
                     </div>
 
                     <div class="row">
-                      <div class="col-sm-6">
+                      <div class="col-sm-7">
                         <div class="form-group">
                           <span class="form-label">Email</span>
-                          <input class="form-control" id='guest-contact' type="text" placeholder=" Please give us your email" required />
+                          <input class="form-control" id='guest-contact' type="text" placeholder=" email to get confirmed booking" required />
                         </div>
                       </div>
-                      <div class="col-sm-6">
+                      <div class="col-sm-5">
                         <div class="form-group">
                           <span class="form-label">Tel</span>
-                          <input class="form-control" id='guest-tel' type="text" placeholder=" Please give us your telephone number" required />
+                          <input class="form-control" id='guest-tel' type="text" placeholder=" tel for contact" required />
                         </div>
                       </div>
                     </div>
@@ -94,6 +97,7 @@
                         </div>
                       </div>
                     </div>
+                    
                     <div class="row">
                       <div class="col-sm-4">
                         <div class="form-group">
@@ -146,7 +150,7 @@
 
                     <div class="form-group">
                       <span class="form-label">Book notes </span>
-                      <textarea class="form-control md-textarea" rows="3" id="book-notes" placeholder=" Please give us your notes for this booking" style="height: auto"/></textarea>
+                      <textarea class="form-control md-textarea" rows="3" id="book-note" placeholder=" Please give us your notes for this booking" style="height: auto"/></textarea>
                     </div>
                     
                     <div class="form-group" style="margin-top: 20px; padding-left: 20px; padding-top: 10px; border-top: #e5e5e5 1px solid;">
@@ -159,8 +163,12 @@
                     </div>
 
                     <div class="form-btn">
-                      <button class="submit-btn bookingbtn"> <span id="message">Check availability</span>  <i class="fa fa-spinner fa-spin" style="font-size:20px; display: none"></i></button>
+                      <button class="submit-btn bookingbtn"> 
+                        <span id="message">Check availability</span>  <i class="fa fa-spinner fa-spin" style="font-size:20px; display: none"></i>
+                        <span id="message-thank-btn" style="display: none"> Thank you !!!</span> 
+                      </button>
                       <p class="thankyou" style="display:none; padding-top: 10px; font-size: 11px">  We have send an email about your booking, please check your mail to get new information from us.</p>
+                      <p class="error" style="display:none; padding-top: 10px; font-size: 11px">  We get trouble with your booking request. Please do it again.</p>
                     </div>
                   </form>
                 </div>

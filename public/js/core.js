@@ -27,6 +27,7 @@ var Core = {
             this.datepicker();
             this.masonry();
             this.language();
+            // this.messengerSupport();
         },
         language: function(){
             if ($.cookie('clang') === 'undefined') {
@@ -46,6 +47,24 @@ var Core = {
                 mode: "range",
                 "plugins": [new rangePlugin({ input: "#date-check-out"})]
             });
+        },
+        messengerSupport: function(){
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId            : '265524687478457',
+                    autoLogAppEvents : true,
+                    xfbml            : true,
+                    version          : 'v3.2'
+                });
+                };
+            
+                (function(d, s, id){
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {return;}
+                    js = d.createElement(s); js.id = id;
+                    js.src = "https://connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
         },
         animations: function() {
             // Animation - appear 
@@ -624,9 +643,12 @@ $('.bookingbtn').click(function(event){
     var kid = $('#kid').val();
     var guestname = $('#guest-name').val();
     var guestcontact = $('#guest-contact').val();
+    var guestTel = $('#guest-tel').val();
     var roomtype = $('#room-no').val();
     var isPromotion = $('#checkbox-early-bird').val();
-
+    var couponCode = $('#coupon-code').val();
+    var bookNote = $('#book-note').val();
+    
     var datareq = {
         'ci': ci,
         'co': co,
@@ -634,8 +656,11 @@ $('.bookingbtn').click(function(event){
         'kid': kid,
         'room': roomtype,
         'email': guestcontact,
+        'tel': guestTel,
         'name': guestname,
-        'promotion': isPromotion
+        'promotion': isPromotion,
+        'couponCode': couponCode,
+        'bookNote': bookNote
     }
     console.log(datareq);
 
@@ -648,12 +673,16 @@ $('.bookingbtn').click(function(event){
     .done(function(data) { 
         console.log(data); 
         $('.fa-spinner.d-inline').removeClass('d-inline');
-        $('#message').text('Thank you !!!');
+        $('#message').addClass('d-none');
+        $('#message-thank-btn').addClass('d-block');
         $('.thankyou').addClass('d-block');
     })
     .fail(function(error) { 
         console.log(error); 
         $('.fa-spinner.d-inline').removeClass('d-inline');
+        $('#message').addClass('d-none');
+        $('#message-thank-btn').addClass('d-block');
+        $('.error').addClass('d-block');
     })
 })
 
