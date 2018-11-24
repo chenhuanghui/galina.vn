@@ -27,15 +27,14 @@ var Core = {
             this.datepicker();
             this.masonry();
             this.language();
-            this.messengerSupport();
         },
         language: function(){
-            if ($.cookie('clang') === 'undefined') {
-                $.cookie('clang', 'lang-en');
+            var clang = $.cookie('clang');
+            if ( clang === undefined) {
                 $('.lang-en').addClass('active');
+                $.cookie('clang', 'lang-en');
             } else {
                 $('.lang').removeClass('active');
-                var clang = $.cookie('clang');
                 $(clang).addClass('active');
             }
         },
@@ -47,10 +46,6 @@ var Core = {
                 mode: "range",
                 "plugins": [new rangePlugin({ input: "#date-check-out"})]
             });
-        },
-        messengerSupport: function(){
-            console.log('init facebook application')
-
         },
         animations: function() {
             // Animation - appear 

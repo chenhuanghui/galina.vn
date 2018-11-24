@@ -1,0 +1,135 @@
+<section id="promotion" class="section bg-light pt-0 pb-5">
+  
+    <!-- Objects - Search -->
+    <div class="objects-search bg-dark dark">
+        <div class="bg-image-holder bg-image-fixed zooming"><img src="img/photos/search-bg.jpg" alt=""></div>
+        <div class="container">
+            <h1 class="mb-1"> <%=  translation.promotion %> </h1>
+            <p class="lead text-muted"><%=  translation.promotion_intro %></p>
+            <hr>
+        </div>
+    </div>
+
+    <div class="objects-container container">
+        <div class="text-right">
+            <!-- Objects - Change Display -->
+            <!-- <ul class="nav nav-view" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#grid_view"><i class="fa fa-th"></i></a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#list_view"><i class="fa fa-th-list"></i></a></li>
+            </ul> -->
+        </div>
+        <div class="tab-content">
+            <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
+                <!-- Objects - Grid-->
+                <div class="objects-grid gutters-sm row">
+                    <div class="col-lg-3 col-6">
+                        <!-- Object - Vertical -->
+                        <div class="object object-vertical">
+                            <div class="object-image">
+                                <a class="link-inherit" href="object.html"><img src="img/hotel/room-superior.jpg" alt=""></a>
+                            </div>
+                            <div class="object-content">
+                                <h5 class="object-title"><a class="link-inherit" href="object.html">Honeymoon </a></h5>
+                                <ul class="object-details list-unstyled">
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_tour %>        </span> <%= translation.no %></li>
+                                </ul>
+                                <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 2.800.000 VND</span>
+                                <span class="object-price">5.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span><%=  translation.detail %></a>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- Object - Vertical -->
+                        <div class="object object-vertical">
+                            <div class="object-image">
+                                <a class="link-inherit" href="object.html"><img src="img/hotel/room-deluxe.jpg" alt=""></a>
+                            </div>
+                            <div class="object-content">
+                                <h5 class="object-title">
+                                    <a class="link-inherit" href="object.html">Couple Young</a>
+                                    <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
+                                </h5>
+                                <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%= translation.promotion_pack_airplan_included_tag  %></span>
+                                <ul class="object-details list-unstyled">
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_duration %>                  </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_room %>                      </span> Deluxe</li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_airticket %>              </span> <%=  translation.promotion_pack_airplan_included %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_tour %>                 </span> Tứ Hải, Vinpearl</li>
+                                </ul>
+                                <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 3.800.000 VND</span>
+                                <span class="object-price">5.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- Object - Vertical -->
+                        <div class="object object-vertical">
+                            <div class="object-image">
+                                <a class="link-inherit" href="#"><img src="img/hotel/room-suite-city.jpg" alt=""></a>
+                            </div>
+                            <div class="object-content">
+                                <h5 class="object-title"><a class="link-inherit" href="object.html">Love again</a></h5>
+                                <ul class="object-details list-unstyled">
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_tour %>                 </span> Tứ Hải, Vinpearl</li>
+                                </ul>
+                                <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 7.800.000 VND</span>
+                                <span class="object-price">6.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!-- Object - Vertical -->
+                        <div class="object object-vertical">
+                            <div class="object-image">
+                                <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-sea.jpg" alt=""></a>
+                            </div>
+                            <div class="object-content">
+                                <h5 class="object-title">
+                                    <a class="link-inherit" href="object.html">Vitamin Sea</a>
+                                    <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
+                                </h5>
+                                <ul class="object-details list-unstyled">
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
+                                    <li><span class="text-muted"><%=  translation.promotion_pack_tour %>        </span> <%= translation.no %></li>
+                                </ul>
+                                <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 12.800.000 VND</span>
+                                <span class="object-price">7.200.000 VND <sup> <%=  translation.package %></sup> </span>
+                                <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+
+</section>   

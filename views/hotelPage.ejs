@@ -120,319 +120,49 @@
         <%- include partials/hotelPage/roomSection.ejs %>  
 
         <!-- Section / Features -->
-        <section id="features" class="section">
-  
-            <div class="container">
-                <div class="row align-items-center" data-local-scroll>
-                    <div class="col-lg-4">
-                        <h1><%=  translation.utilities %></h1>
-                        <p class="lead mb-5"><%=  translation.utilities_intro %></p>
-                        <!-- Feature #1 -->
-                        <div class="feature feature-1">
-                            <i class="icon icon-primary ti ti-cup"></i>
-                            <div class="feature-content">
-                                <h5 class="mb-0"><%=  translation.utilities_room %></h5>
-                                <p class="text-muted"><%=  translation.utilities_room_detail %></p>
-                            </div>
-                        </div>
-                        <!-- Feature #1 -->
-                        <div class="feature feature-1">
-                            <i class="icon icon-primary ti ti-shine"></i>
-                            <div class="feature-content">
-                                <h5 class="mb-0"><%=  translation.utilities_room_other %></h5>
-                                <p class="text-muted"><%=  translation.utilities_room_other_detail %></p>
-                            </div>
-                        </div>
-                        <a href="#gallery" class="btn btn-secondary mb-4"><%=  translation.gallery %></a>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Card -->
-                        <div class="card">
-                            <img src="img/hotel/restaurant.jpg" alt="" class="card-image">
-                            <div class="card-block">
-                                <h5 class="mb-0"><%=  translation.utilities_buffet %></h5>
-                                <p class="text-muted mb-0"><%=  translation.utilities_buffet_intro %></p>
-                            </div>
-                        </div>
-                        <!-- Card -->
-                        <div class="card">
-                            <img src="img/hotel/gym.jpg" alt="" class="card-image">
-                            <div class="card-block">
-                                <h5 class="mb-0"><%=  translation.utilities_gym %></h5>
-                                <p class="text-muted mb-0"><%=  translation.utilities_gym_detail %></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <!-- Card -->
-                        <div class="card">
-                            <img src="img/hotel/hoboi.jpg" alt="" class="card-image">
-                            <div class="card-block">
-                                <h5 class="mb-0"><%=  translation.utilities_pool %></h5>
-                                <p class="text-muted mb-0"><%=  translation.utilities_pool_detail %></p>
-                            </div>
-                        </div>
-                        <!-- Card -->
-                        <div class="card">
-                            <img src="img/hotel/spa.jpg" alt="" class="card-image">
-                            <div class="card-block">
-                                <h5 class="mb-0"><%=  translation.utilities_mudbath_spa %></h5>
-                                <p class="text-muted mb-0"><%=  translation.utilities_mudbath_spa_detail %></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-  
-        </section>
+        <%- include partials/hotelPage/featureSection.ejs %>  
   
         <!-- Section / Gallery -->
-        <section id="gallery" class="section bg-black cover dark">
+        <%- include partials/hotelPage/gallerySection.ejs %>  
   
-            <h2 class="sr-only"><%=  translation.gallery %></h2>
-  
-            <div class="carousel-gallery">
-                <% for (var i=0; i<gallery.length; i++) {%>
-                    <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="0"><img src="<%= gallery[i] %>" alt=""></a>
-                <% } %>
-            </div>
-  
-        </section>
-  
-          <!-- Section / Promotion -->
-      <section id="promotion" class="section bg-light pt-0 pb-5">
-  
-              <!-- Objects - Search -->
-              <div class="objects-search bg-dark dark">
-                  <div class="bg-image-holder bg-image-fixed zooming"><img src="img/photos/search-bg.jpg" alt=""></div>
-                  <div class="container">
-                      <h1 class="mb-1"> <%=  translation.promotion %> </h1>
-                      <p class="lead text-muted"><%=  translation.promotion_intro %></p>
-                      <hr>
-                  </div>
-              </div>
-      
-              <div class="objects-container container">
-                  <div class="text-right">
-                      <!-- Objects - Change Display -->
-                      <!-- <ul class="nav nav-view" role="tablist">
-                          <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#grid_view"><i class="fa fa-th"></i></a></li>
-                          <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#list_view"><i class="fa fa-th-list"></i></a></li>
-                      </ul> -->
-                  </div>
-                  <div class="tab-content">
-                      <div id="grid_view" class="tab-pane fade show active" role="tabpanel">
-                          <!-- Objects - Grid-->
-                          <div class="objects-grid gutters-sm row">
-                              <div class="col-lg-3 col-6">
-                                  <!-- Object - Vertical -->
-                                  <div class="object object-vertical">
-                                      <div class="object-image">
-                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-superior.jpg" alt=""></a>
-                                      </div>
-                                      <div class="object-content">
-                                          <h5 class="object-title"><a class="link-inherit" href="object.html">Honeymoon </a></h5>
-                                          <ul class="object-details list-unstyled">
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>        </span> <%= translation.no %></li>
-                                          </ul>
-                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 2.800.000 VND</span>
-                                          <span class="object-price">5.200.000 VND <sup> <%=  translation.package %></sup> </span>
-                                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span><%=  translation.detail %></a>
-                                      </div> 
-                                  </div>
-                              </div>
-                              <div class="col-lg-3 col-6">
-                                  <!-- Object - Vertical -->
-                                  <div class="object object-vertical">
-                                      <div class="object-image">
-                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-deluxe.jpg" alt=""></a>
-                                      </div>
-                                      <div class="object-content">
-                                          <h5 class="object-title">
-                                              <a class="link-inherit" href="object.html">Couple Young</a>
-                                              <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
-                                          </h5>
-                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%= translation.promotion_pack_airplan_included_tag  %></span>
-                                          <ul class="object-details list-unstyled">
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>                  </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>                      </span> Deluxe</li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_airticket %>              </span> <%=  translation.promotion_pack_airplan_included %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>                 </span> Tứ Hải, Vinpearl</li>
-                                          </ul>
-                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 3.800.000 VND</span>
-                                          <span class="object-price">5.200.000 VND <sup> <%=  translation.package %></sup> </span>
-                                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
-                                      </div> 
-                                  </div>
-                              </div>
-                              <div class="col-lg-3 col-6">
-                                  <!-- Object - Vertical -->
-                                  <div class="object object-vertical">
-                                      <div class="object-image">
-                                          <a class="link-inherit" href="#"><img src="img/hotel/room-suite-city.jpg" alt=""></a>
-                                      </div>
-                                      <div class="object-content">
-                                          <h5 class="object-title"><a class="link-inherit" href="object.html">Love again</a></h5>
-                                          <ul class="object-details list-unstyled">
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>                 </span> Tứ Hải, Vinpearl</li>
-                                          </ul>
-                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 7.800.000 VND</span>
-                                          <span class="object-price">6.200.000 VND <sup> <%=  translation.package %></sup> </span>
-                                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
-                                      </div> 
-                                  </div>
-                              </div>
-                              <div class="col-lg-3 col-6">
-                                  <!-- Object - Vertical -->
-                                  <div class="object object-vertical">
-                                      <div class="object-image">
-                                          <a class="link-inherit" href="object.html"><img src="img/hotel/room-suite-sea.jpg" alt=""></a>
-                                      </div>
-                                      <div class="object-content">
-                                          <h5 class="object-title">
-                                              <a class="link-inherit" href="object.html">Vitamin Sea</a>
-                                              <i class="fa fa-check-circle text-success ml-2" data-toggle="tooltip" data-placement="top" title="Best choice!"></i>
-                                          </h5>
-                                          <ul class="object-details list-unstyled">
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_duration %>   </span> 3 <%= translation.day %> 4 <%= translation.night %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_room %>       </span> Supperior</li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_no_guest %>   </span> 02 <%= translation.guest %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_food %>       </span> <%= translation.promotion_pack_food_detail %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_mudbath %>    </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_spa %>         </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_galinashow %>  </span> 02 <%= translation.ticket %></li>
-                                              <li><span class="text-muted"><%=  translation.promotion_pack_tour %>        </span> <%= translation.no %></li>
-                                          </ul>
-                                          <span class="badge badge-default mb-3"><i class="fa fa-check-circle text-success"></i><%=  translation.promotion_pack_saving %> 12.800.000 VND</span>
-                                          <span class="object-price">7.200.000 VND <sup> <%=  translation.package %></sup> </span>
-                                          <a href="/booking?service=hotel" class="object-btn btn btn-secondary"><span class="hidden-xs-down"></span> <%=  translation.detail %></a>
-                                      </div> 
-                                  </div>
-                              </div>
-                          </div>
-                          
-                      </div>
-                  </div>
-                </div>
-      
-          </section>   
+        <!-- Section / Promotion -->
+        <%- include partials/hotelPage/promotionSection.ejs %>      
   
         <!-- Section / Who we are? -->
-        <section id="who-we-are" class="section">
-  
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <figure class="media-box">
-                            <div class="image"><img src="img/hotel/about-hdg.jpg" alt=""></div>
-                            <button class="btn-play animated visible" data-animation="fadeInUp" data-toggle="video-modal" data-target="#modalVideo" data-video="https://www.youtube.com/embed/AD-D6uSYkqs"></button>
-                        </figure>
-                    </div>
-                    
-                    <div class="col-lg-5 push-lg-1 col-md-6">
-                        <h1>HAI DANG GROUP</h1>
-                        <ul class="nav nav-icons" role="tablist">
-                            <li class="nav-item"><a href="#tab_about" data-toggle="tab" class="nav-link active"><i class="ti-comment"></i><%=  translation.introduce %></a></li>
-                            <li class="nav-item"><a href="#tab_history" data-toggle="tab" class="nav-link"><i class="ti-time"></i><%=  translation.brand %> </a></li>
-                        </ul>
-                        <div class="tab-content" data-local-scroll>
-                            <div id="tab_about" class="tab-pane fade show active" role="tabpanel">
-                                <p class="lead"><%=  translation.introduce_line1 %></p>
-                                <p class="mb-5"><%=  translation.introcuce_line2 %></p>
-                                <a href="#contact" class="btn btn-primary mb-4"><%=  translation.contact %></a>
-                            </div>
-                            <div id="tab_history" class="tab-pane" role="tabpanel">
-                                <p class="lead"><%=  translation.brand_line1 %></p>
-                                <p class="mb-5"><%=  translation.brand_line2 %></p>
-                                <a href="#contact" class="btn btn-primary mb-4"><%=  translation.contact %></a>
-                            </div>
-                        </div>
-                    </div>
-  
-                </div>
-            </div>
-  
-        </section>
+        <%- include partials/wwaSection.ejs %>      
       
         <!-- Section / Contact -->
-        <section id="contact" class="section section-double bg-light">
-  
-            <div class="row">
-                <div class="content col-xl-4 col-md-5">
-                    <h2 class="mb-0"> <%= translation.contact_head %> <br> <%= translation.with_us %></h2>
-                    <hr class="hr-primary">
-                    <address>
-                      <%= translation.street %><br>
-                      <%= translation.ward %><br>
-                      <%= translation.city %><br>
-                    </address>
-                    <p class="lead">
-                        E: <a class="link-inherit" href="#" style="font-size:1rem; font-weight: bold;">booking@haidanggroup.com</a><br>
-                        P: <span style="font-size:1rem; font-weight: bold;">+84 901 7000 89</span>
-                    </p>
-                    <a href="#" target="_blank" class="icon icon-circle icon-sm icon-facebook"><i class="fa fa-facebook"></i></a>
-                    <a href="#" class="icon icon-circle icon-sm icon-google"><i class="fa fa-google"></i></a>
-                    <a href="#" class="icon icon-circle icon-sm icon-twitter"><i class="fa fa-twitter"></i></a>
-                    <a href="#" class="icon icon-circle icon-sm icon-youtube"><i class="fa fa-youtube"></i></a>
-                    <a href="#" class="icon icon-circle icon-sm icon-instagram"><i class="fa fa-instagram"></i></a>
-                </div>
-                <div class="image col-xl-8 col-md-7">
-                    <!-- <div id="google-map" class="bg-map" data-latitude="12.255900" data-longitude="109.195280" data-style="wy"></div> -->
-                    <div class="mapouter"><div class="gmap_canvas"><iframe width="960" height="560" id="gmap_canvas" src="https://maps.google.com/maps?q=galina%20hotel%20nha%20trang%20viet%20nam&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de"></a></div><style>.mapouter{text-align:right;height:560px;width:960px;}.gmap_canvas {overflow:hidden;background:none!important;height:560px;width:960px;}</style></div>
-                </div>
-            </div>
-  
-        </section>
-  
+        <%- include partials/contactSection.ejs %>      
       
-      </div> <!-- END CONTENT -->
+    </div> <!-- END CONTENT -->
   
-      <!-- Footer -->
-        <footer id="footer" class="footer-fixed bg-dark dark">
-  
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center text-md-left mb-5 mb-md-0">
-                        <a href="#"><img src="img/logo-light.svg" width="120" alt=""></a>
-                    </div>
-                    <div class="col-md-10 text-center text-md-right">
-                        <ul class="nav nav-footer mr-4">
-                            <li><a href="#" class="active">HOTEL</a></li>
-                            <li><a href="#">MUD BATH & SPA</a></li>
-                            <li><a href="#">WEDDING & CONVENTION</a></li>
-                            <li><a href="#">SHOW</a></li>
-                            <li><a href="#">LAKE VIEW</a></li>
-                        </ul>
-                        <ul class="nav nav-footer">
-                          <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
-                          <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
-                          <li><a id="lang-rus" class="lang lang-rus" href="/?clang=rus">RUS</a></li>
-                          <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
-                        </ul>
-                    </div>
+    <!-- Footer -->
+    <footer id="footer" class="footer-fixed bg-dark dark">
+
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center text-md-left mb-5 mb-md-0">
+                    <a href="#"><img src="img/logo-light.svg" width="120" alt=""></a>
+                </div>
+                <div class="col-md-10 text-center text-md-right">
+                    <ul class="nav nav-footer mr-4">
+                        <li><a href="#" class="active">HOTEL</a></li>
+                        <li><a href="#">MUD BATH & SPA</a></li>
+                        <li><a href="#">WEDDING & CONVENTION</a></li>
+                        <li><a href="#">SHOW</a></li>
+                        <li><a href="#">LAKE VIEW</a></li>
+                    </ul>
+                    <ul class="nav nav-footer">
+                        <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
+                        <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
+                        <li><a id="lang-rus" class="lang lang-rus" href="/?clang=rus">RUS</a></li>
+                        <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
+                    </ul>
                 </div>
             </div>
-            
-        </footer>
+        </div>
+        
+    </footer>
         <!-- Footer / End -->
         
         <!-- Load Facebook SDK for JavaScript -->

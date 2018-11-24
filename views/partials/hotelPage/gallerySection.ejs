@@ -1,0 +1,11 @@
+<section id="gallery" class="section bg-black cover dark">
+  
+    <h2 class="sr-only"><%=  translation.gallery %></h2>
+
+    <div class="carousel-gallery">
+        <% for (var i=0; i<gallery.length; i++) {%>
+            <a href="#" data-toggle="gallery" data-items="galleryCarouselItems" data-slide="0"><img src="<%= gallery[i] %>" alt=""></a>
+        <% } %>
+    </div>
+
+</section>
