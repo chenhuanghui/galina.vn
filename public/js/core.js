@@ -32,7 +32,7 @@ var Core = {
             var clang = $.cookie('clang');
             if ( clang === undefined) {
                 $('.lang-en').addClass('active');
-                $.cookie('clang', 'lang-en');
+                $.cookie('clang', '.lang-en');
             } else {
                 $('.lang').removeClass('active');
                 $(clang).addClass('active');
