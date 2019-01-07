@@ -2,14 +2,38 @@
   <!-- Module - Navigation -->
   <nav id="navigation-main" class="module module-nav">
       <ul class="nav nav-main-horizontal">
-          <li><a href="#home"><%= translation.Home %></a></li>
-          <li><a href="#about"><%= translation.Introduce %></a></li>
-          <li><a href="#rooms"><%= translation.Accomodation %></a></li>
-          <li><a href="#features"><%= translation.Services %></a></li>
-          <li><a href="#gallery"><%= translation.Gallery %></a></li>
-          <li><a href="#promotion"><%= translation.Promotion %></a></li>
-          <li><a href="#who-we-are"><%= translation.Owner %></a></li>
-          <li><a href="#contact"><%= translation.Contact_us %></a></li>
+            <% if (pageID == 1) { %>
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
+                <li><a href="#features"><%= translation.Services %></a></li>
+                <li><a href="#gallery"><%= translation.Gallery %></a></li>
+                <li><a href="#promotion"><%= translation.Promotion %></a></li>
+                <li><a href="#who-we-are"><%= translation.Owner %></a></li>
+                <li><a href="#contact"><%= translation.Contact_us %></a></li>      
+            <% } else if (pageID == 2) {%>
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
+            <% } else if (pageID == 3) {%>
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
+            <% } else if (pageID == 4) {%>
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.show %></a></li>
+            <% } else if (pageID == 5) {%>
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
+            <%} else {%>
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
+            <%}%>
+
+          
       </ul>
       <div class="selector"></div>
   </nav>
@@ -17,23 +41,25 @@
   <!-- Module - Objects -->
   <div class="module module-object" data-toggle="panel-objects">
       <img class="object-image" src="img/photos/object_thumbnail.png" alt="" style="height: 36px">
-      <span class="object-name">Premium Hotel</span>
+      <span class="object-name"><%= title %></span>
       <span class="object-indicator"><i class="ti ti-menu"></i></span>
   </div>
   
   <!-- Module - Language -->
   <nav class="module module-language mr-3">
     <ul class="nav nav-main-horizontal nav-language">
-        <li><a id="lang-vi" class="lang lang-vi" data='.lang-vi' href="/?clang=vi">VN</a></li>
-        <li><a id="lang-en" class="lang lang-en" data='.lang-en' href="/?clang=en">EN</a></li>
-        <li><a id="lang-rus"class="lang lang-rus" data='.lang-rus' href="/?clang=rus">RUS</a></li>
-        <li><a id="lang-kr" class="lang lang-kr" data='.lang-kr' href="/?clang=kr">KR</a></li>
+        <li><a id="lang-vi" class="lang lang-vi" data='.lang-vi' href="/<%= ref %>?clang=vi">VN</a></li>
+        <li><a id="lang-en" class="lang lang-en" data='.lang-en' href="/<%= ref %>?clang=en">EN</a></li>
+        <li><a id="lang-rus"class="lang lang-rus" data='.lang-rus' href="/<%= ref %>?clang=rus">RUS</a></li>
+        <li><a id="lang-kr" class="lang lang-kr" data='.lang-kr' href="/<%= ref %>?clang=kr">KR</a></li>
     </ul>
   </nav>
 
   <!-- Module - Navigation Toggle -->
   <div class="module module-nav-toggle">
-      <a href="#" id="nav-toggle" class="nav-toggle"><span></span><span></span><span></span><span></span></a>
+    <a href="#" id="nav-toggle" class="nav-toggle">
+        <span></span><span></span><span></span><span></span>
+    </a>
   </div>
 </header>
 <!-- Header / End -->

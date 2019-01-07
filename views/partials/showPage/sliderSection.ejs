@@ -1,0 +1,30 @@
+<section id="home" class="section h-fullheight bg-dark cover dark">
+    <!-- Slider Main -->
+    <div class="slider-main slider-kenburns inner-controls">
+        <%  for (var i=0; i<sliders.length; i++) {%>
+            <div class="slide">
+                <div class="slide-bg bg-image-holder bg-image-fixed">
+                    <img src="<%= sliders[i] %>" alt="">
+                </div>
+                <div class="slide-content container text-center">
+                    <!-- <h1>Toàn cảnh khách sạn</h1> -->
+                </div>
+            </div>
+        <% } %>
+    </div>
+    
+    <!-- Slider Navigation -->
+    <div class="slider-main-nav">
+        <%  for (var i=0; i<sliders_thumb.length; i++) {%>
+            <div class="slide"><img src="<%= sliders_thumb[i] %>" alt=""></div>    
+        <% } %>
+    </div>
+
+    <!-- Gallery Toggle -->
+    <a href="#" class="fullscreen-toggle" data-items="gallerySliderItems" data-toggle="gallery">
+        <span class="arrow-tl"></span>
+        <span class="arrow-tr"></span>
+        <span class="arrow-br"></span>
+        <span class="arrow-bl"></span>
+    </a>
+</section>  

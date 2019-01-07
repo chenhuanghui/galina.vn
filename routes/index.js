@@ -1,90 +1,67 @@
 var express = require('express');
 var router = express.Router();
-var hoteldata = require('../public/data/hoteldata.json');
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  let sliders = ['img/hotel/slider01.jpg','img/hotel/slider02.jpg','img/hotel/slider03.jpg','img/hotel/slider04.jpg','img/hotel/slider05.jpg'];
-  let sliders_thumb= ['img/hotel/slider01_thumbnail.jpg','img/hotel/slider02_thumbnail.jpg','img/hotel/slider03_thumbnail.jpg','img/hotel/slider04_thumbnail.jpg','img/hotel/slider05_thumbnail.jpg'];
-  let gallery = ['img/gallery/gallery01.jpg','img/gallery/gallery02.jpg','img/gallery/gallery03.jpg','img/gallery/gallery04.jpg','img/gallery/gallery05.jpg','img/gallery/gallery06.jpg','img/gallery/gallery07.jpg','img/gallery/gallery08.jpg','img/gallery/gallery09.jpg','img/gallery/gallery10.jpg','img/gallery/gallery11.jpg','img/gallery/gallery12.jpg'];
-  let roomlist = [
-    {
-      name:'Supperior',
-      link: '#',
-      imgRoom:'img/hotel/room-superior.jpg',
-      square: '32',
-      windows:'yes',
-      balcone:'no',
-      view:'city',
-      capacity:'02 adults, 02 kid',
-      price: '1.800.000'
-    },
-    {
-      name:'Deluxe',
-      link: '#',
-      imgRoom:'img/hotel/room-superior.jpg',
-      square: '32',
-      windows:'yes',
-      balcone:'no',
-      view:'city',
-      capacity:'02 adults, 02 kid',
-      price: '1.800.000'
-    },
-    {
-      name:'Suite City View',
-      link: '#',
-      imgRoom:'img/hotel/room-superior.jpg',
-      square: '32',
-      windows:'yes',
-      balcone:'no',
-      view:'city',
-      capacity:'02 adults, 02 kid',
-      price: '1.800.000'
-    },
-    {
-      name:'Suite Sea View',
-      link: '#',
-      imgRoom:'img/hotel/room-superior.jpg',
-      square: '32',
-      windows:'yes',
-      balcone:'no',
-      view:'city',
-      capacity:'02 adults, 02 kid',
-      price: '1.800.000'
-    }
-  ]
-  res.render('hotelPage', { 
-    title: 'GALINA HOTEL',
-    data: hoteldata,
-    sliders: sliders,
-    sliders_thumb: sliders_thumb,
-    gallery: gallery,
-    roomlist: roomlist
-  });
+  res.redirect('/hotel');
 });
 
 router.get('/hotel', function (req, res) {
-  res.redirect('/');
+  let sliders = ['img/hotel/slider01.jpg','img/hotel/slider02.jpg','img/hotel/slider03.jpg','img/hotel/slider04.jpg','img/hotel/slider05.jpg'];
+  let sliders_thumb= ['img/hotel/slider01_thumbnail.jpg','img/hotel/slider02_thumbnail.jpg','img/hotel/slider03_thumbnail.jpg','img/hotel/slider04_thumbnail.jpg','img/hotel/slider05_thumbnail.jpg'];
+  let gallery = ['img/gallery/gallery01.jpg','img/gallery/gallery02.jpg','img/gallery/gallery03.jpg','img/gallery/gallery04.jpg','img/gallery/gallery05.jpg','img/gallery/gallery06.jpg','img/gallery/gallery07.jpg','img/gallery/gallery08.jpg','img/gallery/gallery09.jpg','img/gallery/gallery10.jpg','img/gallery/gallery11.jpg','img/gallery/gallery12.jpg'];
+  res.render('hotelPage', { 
+    title: 'GALINA HOTEL',
+    sliders: sliders,
+    sliders_thumb: sliders_thumb,
+    gallery: gallery,
+    pageID: 1,
+    ref: 'hotel'
+  });
 });
 
 router.get('/mudbathspa', function (req, res) {
-  res.render('mudspaPage', { title: 'GALINA MUD BATH & SPA' });
+  res.render('mudspaPage', { 
+    title: 'GALINA MUD BATH & SPA', 
+    pageID: 2, 
+    ref: 'mudbathspa'
+  });
 });
 
 router.get('/weddingconvention', function (req, res) {
-  res.render('wcPage', { title: 'GALINA WEDDING CONVENTION' });
+  res.render('wcPage', { 
+    title: 'GALINA WEDDING CONVENTION', 
+    pageID: 3, 
+    ref: 'weddingconvention'
+   });
 });
 
 router.get('/show', function (req, res) {
-  res.render('showPage', { title: 'GALINA SHOW' });
+  let sliders = ['img/hotel/slider01.jpg','img/hotel/slider02.jpg','img/hotel/slider03.jpg','img/hotel/slider04.jpg','img/hotel/slider05.jpg'];
+  let sliders_thumb= ['img/hotel/slider01_thumbnail.jpg','img/hotel/slider02_thumbnail.jpg','img/hotel/slider03_thumbnail.jpg','img/hotel/slider04_thumbnail.jpg','img/hotel/slider05_thumbnail.jpg'];
+  res.render('showPage', { 
+    title: 'GALINA SHOW',
+    sliders: sliders,
+    sliders_thumb: sliders_thumb,
+    pageID: 4, 
+    ref: 'show'
+  });
 })
 
 router.get('/lakeview', function (req, res) {
-  res.render('lakePage', { title: 'GALINA LAKE VIEW' });
+  res.render('lakePage', { 
+    title: 'GALINA LAKE VIEW',
+    pageID: 5, 
+    ref: 'lakeview'
+  });
 })
 
 router.get('/water', function (req, res) {
-  res.render('waterPage', { title: 'GALINA LAKE VIEW' });
+  res.render('waterPage', { 
+    title: 'GALINA LAKE VIEW',
+    pageID: 6, 
+    ref: 'water' 
+  });
 })
 
 
