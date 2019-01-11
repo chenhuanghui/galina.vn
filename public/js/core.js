@@ -244,7 +244,7 @@ var Core = {
             this.carousel(); 
             this.forms();
             this.gallery();
-            this.map();
+            // this.map();
             this.modal();
             this.panelObjects();
             this.tooltip();

@@ -2,7 +2,7 @@
   <!-- Module - Navigation -->
   <nav id="navigation-main" class="module module-nav">
       <ul class="nav nav-main-horizontal">
-            <% if (pageID == 1) { %>
+            <% if (pageID == 1) { %> <!-- hotel -->
                 <li><a href="#home"><%= translation.Home %></a></li>
                 <li><a href="#about"><%= translation.Introduce %></a></li>
                 <li><a href="#rooms"><%= translation.Accomodation %></a></li>
@@ -11,23 +11,30 @@
                 <li><a href="#promotion"><%= translation.Promotion %></a></li>
                 <li><a href="#who-we-are"><%= translation.Owner %></a></li>
                 <li><a href="#contact"><%= translation.Contact_us %></a></li>      
-            <% } else if (pageID == 2) {%>
+            <% } else if (pageID == 2) {%> <!-- mudbath & spa -->
                 <li><a href="#home"><%= translation.Home %></a></li>
                 <li><a href="#about"><%= translation.Introduce %></a></li>
                 <li><a href="#rooms"><%= translation.Accomodation %></a></li>
-            <% } else if (pageID == 3) {%>
+            <% } else if (pageID == 3) {%> <!-- wedding convention -->
                 <li><a href="#home"><%= translation.Home %></a></li>
                 <li><a href="#about"><%= translation.Introduce %></a></li>
                 <li><a href="#rooms"><%= translation.Accomodation %></a></li>
-            <% } else if (pageID == 4) {%>
+            <% } else if (pageID == 4) {%> <!-- show -->
                 <li><a href="#home"><%= translation.Home %></a></li>
                 <li><a href="#about"><%= translation.Introduce %></a></li>
                 <li><a href="#rooms"><%= translation.show %></a></li>
-            <% } else if (pageID == 5) {%>
+                <li><a href="#gallery"><%= translation.Gallery %></a></li>
+                <li><a href="#who-we-are"><%= translation.Owner %></a></li>
+                <li><a href="#contact"><%= translation.Contact_us %></a></li>      
+            <% } else if (pageID == 5) {%> <!-- lake view -->
                 <li><a href="#home"><%= translation.Home %></a></li>
                 <li><a href="#about"><%= translation.Introduce %></a></li>
                 <li><a href="#rooms"><%= translation.Accomodation %></a></li>
-            <%} else {%>
+            <% } else if (pageID == 6) {%> <!-- water -->
+                <li><a href="#home"><%= translation.Home %></a></li>
+                <li><a href="#about"><%= translation.Introduce %></a></li>
+                <li><a href="#rooms"><%= translation.Accomodation %></a></li>
+            <%} else {%> <!-- booking -->
                 <li><a href="#home"><%= translation.Home %></a></li>
                 <li><a href="#about"><%= translation.Introduce %></a></li>
                 <li><a href="#rooms"><%= translation.Accomodation %></a></li>
