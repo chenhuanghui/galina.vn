@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
   res.render('bookingPage', {
     title: 'booking page',
     pageID: 7,
-    ref: 'booking page'
+    ref: 'booking'
   });
 });
 
