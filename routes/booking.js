@@ -7,7 +7,7 @@ var helper = require('sendgrid').mail;
 /* GET booking page. */
 router.get('/', function(req, res, next) {
   res.render('bookingPage', {
-    title: 'booking page',
+    title: 'Reservation Center',
     pageID: 7,
     ref: 'booking'
   });

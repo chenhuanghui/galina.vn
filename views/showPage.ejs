@@ -39,53 +39,8 @@
             <%- include partials/showPage/aboutSection.ejs %>  
         </div> <!-- END CONTENT -->
 
-    <!-- Footer -->
-    <footer id="footer" class="footer-fixed bg-dark dark">
-
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-2 text-center text-md-left mb-5 mb-md-0">
-                    <a href="#"><img src="img/logo-light.svg" width="120" alt=""></a>
-                </div>
-                <div class="col-md-10 text-center text-md-right">
-                    <ul class="nav nav-footer mr-4">
-                        <li><a href="#" class="active">HOTEL</a></li>
-                        <li><a href="#">MUD BATH & SPA</a></li>
-                        <li><a href="#">WEDDING & CONVENTION</a></li>
-                        <li><a href="#">SHOW</a></li>
-                        <li><a href="#">LAKE VIEW</a></li>
-                    </ul>
-                    <ul class="nav nav-footer">
-                        <li><a id="lang-vi" class="lang lang-vi" href="/?clang=vi">VN</a></li>
-                        <li><a id="lang-en" class="lang lang-en active" href="/?clang=en">EN</a></li>
-                        <li><a id="lang-rus" class="lang lang-rus" href="/?clang=rus">RUS</a></li>
-                        <li><a id="lang-kr" class="lang lang-kr" href="/?clang=kr">KR</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-    </footer>
-        <!-- Footer / End -->
-        
-        <!-- Load Facebook SDK for JavaScript -->
-        <div id="fb-root"></div>
-        <script>
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-        </script>
-
-        <!-- Your customer chat code -->
-        <div class="fb-customerchat"
-            attribution=setup_tool
-            page_id="663509893691742"
-            theme_color="#3F2233">
-        </div>
+        <!-- Section / Footer -->
+        <%- include partials/footerSection.ejs %>  
 
         <!-- Body Overlay -->
         <div id="body-overlay"></div>
