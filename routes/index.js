@@ -22,7 +22,7 @@ router.get('/hotel', function (req, res) {
 
 router.get('/mudbathspa', function (req, res) {
   res.render('mudspaPage', { 
-    title: 'GALINA MUD BATH & SPA', 
+    title: 'MUD BATH & SPA', 
     pageID: 2, 
     ref: 'mudbathspa'
   });
@@ -66,7 +66,7 @@ router.get('/lakeview', function (req, res) {
 
 router.get('/water', function (req, res) {
   res.render('waterPage', { 
-    title: 'GALINA LAKE VIEW',
+    title: 'GALINA WATER',
     pageID: 6, 
     ref: 'water' 
   });
