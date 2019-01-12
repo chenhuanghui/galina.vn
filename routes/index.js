@@ -11,7 +11,7 @@ router.get('/hotel', function (req, res) {
   let sliders_thumb= ['img/hotel/slider01_thumbnail.jpg','img/hotel/slider02_thumbnail.jpg','img/hotel/slider03_thumbnail.jpg','img/hotel/slider04_thumbnail.jpg','img/hotel/slider05_thumbnail.jpg'];
   let gallery = ['img/gallery/gallery01.jpg','img/gallery/gallery02.jpg','img/gallery/gallery03.jpg','img/gallery/gallery04.jpg','img/gallery/gallery05.jpg','img/gallery/gallery06.jpg','img/gallery/gallery07.jpg','img/gallery/gallery08.jpg','img/gallery/gallery09.jpg','img/gallery/gallery10.jpg','img/gallery/gallery11.jpg','img/gallery/gallery12.jpg'];
   res.render('hotelPage', { 
-    title: 'GALINA HOTEL',
+    title: 'PREMIUM HOTEL',
     sliders: sliders,
     sliders_thumb: sliders_thumb,
     gallery: gallery,
@@ -30,7 +30,7 @@ router.get('/mudbathspa', function (req, res) {
 
 router.get('/weddingconvention', function (req, res) {
   res.render('wcPage', { 
-    title: 'GALINA WEDDING CONVENTION', 
+    title: 'WEDDING CONVENTION', 
     pageID: 3, 
     ref: 'weddingconvention'
    });
@@ -41,7 +41,7 @@ router.get('/show', function (req, res) {
   let sliders_thumb= ['img/show/slider01_thumbnail.jpg','img/show/slider02_thumbnail.jpg','img/show/slider03_thumbnail.jpg','img/show/slider04_thumbnail.jpg','img/show/slider05_thumbnail.jpg'];
   let gallery = ['img/show/gallery/gallery01.jpg','img/show/gallery/gallery02.jpg','img/show/gallery/gallery03.jpg','img/show/gallery/gallery04.jpg','img/show/gallery/gallery05.jpg','img/show/gallery/gallery06.jpg','img/show/gallery/gallery07.jpg','img/show/gallery/gallery08.jpg','img/show/gallery/gallery09.jpg','img/show/gallery/gallery10.jpg','img/show/gallery/gallery11.jpg','img/show/gallery/gallery12.jpg'];
   res.render('showPage', { 
-    title: 'GALINA SHOW',
+    title: 'SHOW',
     sliders: sliders,
     sliders_thumb: sliders_thumb,
     gallery: gallery,
@@ -55,7 +55,7 @@ router.get('/lakeview', function (req, res) {
   let sliders_thumb= ['img/show/slider01_thumbnail.jpg','img/show/slider02_thumbnail.jpg','img/show/slider03_thumbnail.jpg','img/show/slider04_thumbnail.jpg','img/show/slider05_thumbnail.jpg'];
   let gallery = ['img/show/gallery/gallery01.jpg','img/show/gallery/gallery02.jpg','img/show/gallery/gallery03.jpg','img/show/gallery/gallery04.jpg','img/show/gallery/gallery05.jpg','img/show/gallery/gallery06.jpg','img/show/gallery/gallery07.jpg','img/show/gallery/gallery08.jpg','img/show/gallery/gallery09.jpg','img/show/gallery/gallery10.jpg','img/show/gallery/gallery11.jpg','img/show/gallery/gallery12.jpg'];
   res.render('lakePage', { 
-    title: 'GALINA LAKE VIEW',
+    title: 'LAKE VIEW',
     sliders: sliders,
     sliders_thumb: sliders_thumb,
     gallery: gallery,
@@ -66,7 +66,7 @@ router.get('/lakeview', function (req, res) {
 
 router.get('/water', function (req, res) {
   res.render('waterPage', { 
-    title: 'GALINA WATER',
+    title: 'WATER',
     pageID: 6, 
     ref: 'water' 
   });
