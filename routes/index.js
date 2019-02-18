@@ -21,11 +21,18 @@ router.get('/hotel', function (req, res) {
 });
 
 router.get('/mudbathspa', function (req, res) {
+  let sliders = ['img/wedding/slider01.jpg','img/wedding/slider02.jpg','img/wedding/slider03.jpg','img/wedding/slider04.jpg','img/wedding/slider05.jpg','img/wedding/slider06.jpg','img/wedding/slider07.jpg','img/wedding/slider08.jpg','img/wedding/slider09.jpg','img/wedding/slider10.jpg','img/wedding/slider11.jpg','img/wedding/slider12.jpg'];
+  let sliders_thumb= ['img/wedding/slider01_thumbnail.jpg','img/wedding/slider02_thumbnail.jpg','img/wedding/slider03_thumbnail.jpg','img/wedding/slider04_thumbnail.jpg','img/wedding/slider05_thumbnail.jpg','img/wedding/slider06_thumbnail.jpg','img/wedding/slider07_thumbnail.jpg','img/wedding/slider08_thumbnail.jpg','img/wedding/slider09_thumbnail.jpg','img/wedding/slider10_thumbnail.jpg','img/wedding/slider11_thumbnail.jpg','img/wedding/slider12_thumbnail.jpg'];
+  let gallery = ['img/wedding/gallery/gallery01.jpg','img/wedding/gallery/gallery02.jpg','img/wedding/gallery/gallery03.jpg','img/wedding/gallery/gallery04.jpg','img/wedding/gallery/gallery05.jpg'];
   res.render('mudspaPage', { 
     title: 'MUD BATH & SPA', 
+    sliders: sliders,
+    sliders_thumb: sliders_thumb,
+    gallery: gallery,
     pageID: 2, 
     ref: 'mudbathspa'
-  });
+   });
+
 });
 
 router.get('/weddingconvention', function (req, res) {
